@@ -17,8 +17,8 @@ var InoShopUI = (function () {
 
     function legalLinksHtml() {
         return '<div class="ino-legal-links">' +
-            '<a href="distance-sales-agreement.html">Distance Sales Agreement</a>' +
-            '<a href="cancellation-refund.html">Cancellation &amp; Refund Policy</a>' +
+            '<a href="distance-sales-agreement.html">Mesafeli Satış Sözleşmesi</a>' +
+            '<a href="cancellation-refund.html">İptal ve İade Politikası</a>' +
             '</div>';
     }
 

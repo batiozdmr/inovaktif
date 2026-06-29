@@ -244,15 +244,15 @@
                                 <div class="form-card-title">📄 Agreements</div>
                                 <div class="agreement-check">
                                     <input type="checkbox" id="chkMesafeli"/>
-                                    <label for="chkMesafeli">I have read and accept the <a href="distance-sales-agreement.html" target="_blank">Distance Sales Agreement</a>. *</label>
+                                    <label for="chkMesafeli"><a href="distance-sales-agreement.html" target="_blank">Mesafeli Satış Sözleşmesi</a>'ni okudum ve kabul ediyorum. *</label>
                                 </div>
                                 <div class="agreement-check">
                                     <input type="checkbox" id="chkIptal"/>
-                                    <label for="chkIptal">I have read and accept the <a href="cancellation-refund.html" target="_blank">Cancellation &amp; Refund Policy</a>. *</label>
+                                    <label for="chkIptal"><a href="cancellation-refund.html" target="_blank">İptal ve İade Politikası</a>'nı okudum ve kabul ediyorum. *</label>
                                 </div>
                                 <div class="agreement-check">
                                     <input type="checkbox" id="chkKvkk"/>
-                                    <label for="chkKvkk">I have read and approve the <a href="cookie-policy.html" target="_blank">Privacy Notice</a> regarding the processing of my personal data. *</label>
+                                    <label for="chkKvkk">Kişisel verilerimin işlenmesine ilişkin <a href="cookie-policy.html" target="_blank">Aydınlatma Metni</a>'ni okudum ve onaylıyorum. *</label>
                                 </div>
                                 <button class="btn-pay" onclick="doPayment()">🔒 Complete Payment</button>
                             </div>
@@ -364,7 +364,7 @@ function doPayment() {
     var name = document.getElementById('fName').value.trim();
     var email = document.getElementById('fEmail').value.trim();
     if(!name || !email) { alert('Please fill in your first name and email.'); return; }
-    if(!chkM || !chkI || !chkK) { alert('Please read and accept all agreements.'); return; }
+    if(!chkM || !chkI || !chkK) { alert('Lütfen tüm sözleşmeleri okuyup onaylayın.'); return; }
     document.getElementById('payModal').classList.add('open');
 }
 
