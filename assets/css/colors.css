@@ -1,0 +1,708 @@
+/* Primary color */
+
+a,
+.text-primary,
+.btn-link,
+a.list-group-item.active > .badge,
+.nav-pills > .active > a > .badge,
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.form-submit:hover,
+.ef-service-icn {
+	color: #cca152;
+}
+
+.bypostauthor .ef-comment-num {
+	color: #efd5a3;
+}
+
+.ef-pass,
+.woocommerce .products .star-rating,
+.woocommerce-page .products .star-rating,
+.woocommerce .star-rating:before,
+.woocommerce-page .star-rating:before,
+.woocommerce .star-rating span:before,
+.woocommerce-page .star-rating span:before,
+.woocommerce p.stars a,
+.woocommerce-page p.stars,
+.woocommerce p.stars a.active:after,
+.woocommerce p.stars a:hover:after,
+.woocommerce-page p.stars a.active:after,
+.woocommerce-page p.stars a:hover:after {
+	color: #dbb672;
+}
+
+.bg-primary,
+.btn-primary,
+fieldset[disabled] .btn-primary.active,
+.btn-primary .badge,
+.progress-bar,
+a.list-group-item.active,
+a.list-group-item.active:hover,
+a.list-group-item.active:focus,
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.label-primary,
+.ef-service > i,
+.ef-author-posts,
+.ef-sticky-icon,
+.ef-post-edit-link:hover,
+.ef-comment-edit-link:hover,
+.mejs-controls .mejs-time-rail .mejs-time-current,
+.ef-nextpage > .ef-current-page-num,
+.woocommerce a.added_to_cart,
+.woocommerce-page a.added_to_cart,
+.woocommerce #content input.button.alt,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce-page #content input.button.alt,
+.woocommerce-page #respond input#submit.alt,
+.woocommerce-page a.button.alt,
+.woocommerce-page button.button.alt,
+.woocommerce-page input.button.alt,
+.woocommerce #content div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce-page div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce table.shop_table > thead,
+.woocommerce-page table.shop_table > thead,
+#ef-woo-shopping-cart a.cart-contents > span,
+#ef-woo-shopping-cart a.button.checkout,
+.widget_recent_entries ul li:before,
+.ef-progress-bar div div {
+	background-color: #dbb672;
+}
+
+.form-control:focus,
+a.list-group-item.active,
+a.list-group-item.active:hover,
+a.list-group-item.active:focus,
+.btn-primary,
+#ef-contact-form button[type="submit"]:hover,
+#ef-comment-form button[type="submit"]:hover,
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus,
+.form-submit:hover,
+.top-bar-section ul li:not(.active) > a:after,
+.top-bar-section ul li > a:before,
+.ef-posted-in li a:hover:before,
+.ef-posted-on li a:hover:before,
+#ef-portfolio-filter li.cbp-filter-item-active > a:before,
+#ef-list-categories a:hover:after,
+.pagination > li > a:after,
+.pagination > li > span.current:after,
+.btn.btn-default:hover,
+.tagcloud li a:hover,
+.comment-reply-link:hover,
+.ef-underlined-title.text-center:after,
+#ef-footer-inner:before,
+#ef-blog-inner:not(.ef-min-blog) .ef-post.type-post .ef-proj-desc:after,
+.ef-gallery-outer .wp-caption-text.gallery-caption:after,
+.woocommerce #content input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce-page #content input.button:hover,
+.woocommerce-page #respond input#submit:hover,
+.woocommerce-page a.button:hover,
+.woocommerce-page button.button:hover,
+.woocommerce-page input.button:hover,
+.woocommerce a.added_to_cart,
+.woocommerce-page a.added_to_cart,
+.woocommerce #content input.button.alt,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce-page #content input.button.alt,
+.woocommerce-page #respond input#submit.alt,
+.woocommerce-page a.button.alt,
+.woocommerce-page button.button.alt,
+.woocommerce-page input.button.alt,
+.woocommerce .related > h2:after,
+.woocommerce .related > h2:after,
+.woocommerce-page .related > h2:after,
+.woocommerce-page .related > h2:after,
+.product_meta a:hover:after,
+#ef-woo-shopping-cart a.button.checkout,
+input.wpcf7-submit[type="submit"]:hover,
+.panel.panel-default {
+	border-color: #dbb672;
+}
+
+.woocommerce #order_review_heading:after,
+.woocommerce-page #order_review_heading:after {
+	border-top-color: #dbb672;
+}
+
+::selection {
+	background: #dbb672;
+}
+
+::-moz-selection {
+	background: #dbb672;
+}
+
+/* Other colors */
+
+::selection {
+	color: #262626;
+}
+
+::-moz-selection {
+	color: #262626;
+}
+
+#ef-site-nav .navbar-brand > a,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-welcome-block #ef-main-title,
+.ef-dark-adjustor.ef-home-default #ef-welcome-block #ef-main-title,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-welcome-block #ef-main-description,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-welcome-block #ef-main-description *,
+.ef-dark-adjustor.ef-home-default #ef-welcome-block #ef-main-description,
+.ef-dark-adjustor.ef-home-default #ef-welcome-block #ef-main-description *,
+.ef-dark-adjustor .slide_desc *,
+.ef-dark-adjustor .flex-direction-nav a,
+.ef-dark-adjustor .slide_desc a,
+.ef-dark-adjustor .slide_desc a:hover,
+.title-area > .name,
+.ef-comments-title,
+.ef-service > i,
+.ef-dark-adjustor.page-template-templateshome-template-php.ef-header-out #ef-controls-bar,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-controls-bar,
+.ef-entry-caption,
+#ef-back-cats,
+body.author .ef-author-posts,
+.ef-dark-adjustor.ef-home-default #ef-welcome-block #ef-social-bar > li > a,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-welcome-block #ef-social-bar > li > a,
+.mejs-overlay-button:before,
+.mejs-overlay-loading span:before,
+.wp-caption-text.gallery-caption,
+.ef-gallery-outer .wp-caption-text.gallery-caption,
+.ef-dark-adjustor #ef-welcome-block .ef-author-info,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-wpml-lang-switcher a,
+.ef-dark-adjustor.ef-home-default #ef-wpml-lang-switcher a {
+	color: #fff;
+}
+
+.page-template-templateshome-template-php:not(.ef-home-default) #ef-header-inner,
+.ef-header-out #ef-latest-nav,
+#ef-content,
+.ef-advanced-layout #ef-content > main,
+.form-submit,
+.author .ef-author-info,
+.ef-edit-attachment-link > .post-edit-link,
+.ef-attachment-nav > li > a:before,
+#searchform #s,
+#ef-controls #ef-toggle-share > a,
+#ef-site-nav-inner,
+.page-template-templateshome-template-php.ef-protected-page:not(.ef-home-default),
+.woocommerce #payment div.payment_box,
+.woocommerce-page #payment div.payment_box,
+#ef-woo-shopping-cart .ef-mini-cart > div,
+#ef-sidebar .widget #wp-calendar,
+.ef-panel.panel .panel-heading,
+#ef-to-project {
+	background-color: #fff;
+}
+
+.ef-dark-adjustor:not(.ef-header-out):not(.ef-menu-active) #ef-toggle-menu > span,
+.ef-dark-adjustor:not(.ef-header-out):not(.ef-menu-active) #ef-toggle-menu > span:before,
+.ef-dark-adjustor:not(.ef-header-out):not(.ef-menu-active) #ef-toggle-menu > span:after,
+.ef-dark-adjustor.page-template-templateshome-template-php.ef-header-out:not(.ef-menu-active) #ef-toggle-menu > span,
+.ef-dark-adjustor.page-template-templateshome-template-php.ef-header-out:not(.ef-menu-active) #ef-toggle-menu > span:before,
+.ef-dark-adjustor.page-template-templateshome-template-php.ef-header-out:not(.ef-menu-active) #ef-toggle-menu > span:after,
+.ef-dark-adjustor.ef-home-default #fireform-slider-wrapper .flex-control-paging a:before,
+.ef-dark-adjustor.ef-home-default #fireform-slider-wrapper .flex-control-paging a:after,
+.ef-dark-adjustor:not(.ef-header-out):not(.page-template-templateshome-template-php):not(.ef-menu-active) #ef-sidebar:after,
+.ef-dark-adjustor.ef-header-out.page-template-templateshome-template-php #ef-sidebar:after,
+.ef-dark-adjustor.ef-home-default:not(.ef-menu-active) #ef-sidebar:after,
+.ef-dark-adjustor:not(.ef-header-out):not(.page-template-templateshome-template-php):not(.ef-menu-active) #ef-sidebar:before,
+.ef-dark-adjustor.ef-header-out.page-template-templateshome-template-php #ef-sidebar:before,
+.ef-dark-adjustor.ef-home-default:not(.ef-menu-active) #ef-sidebar:before,
+.ef-dark-adjustor.ef-home-default #ef-welcome-block #ef-main-title,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-welcome-block #ef-main-title,
+.ef-dark-adjustor #ef-to-parent:before,
+.ef-dark-adjustor #ef-to-parent:after,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-to-content:after,
+.ef-dark-adjustor:not(.ef-header-out) #ef-woo-shopping-cart a.cart-contents,
+.ef-dark-adjustor:not(.ef-header-out) #ef-woo-shopping-cart a.cart-contents:before,
+.ef-dark-adjustor #ef-loader .ef-loader-1,
+.ef-dark-adjustor #ef-loader .ef-loader-2,
+.widget_calendar td#next,
+.widget_calendar td#prev,
+.widget_calendar table tfoot,
+.ef-dark-adjustor:not(.page-template-templateshome-template-php) #ef-wpml-lang-switcher > li,
+.ef-dark-adjustor.ef-home-default #ef-wpml-lang-switcher > li {
+	border-color: #fff;
+}
+
+.ef-header-angle,
+.woocommerce #payment div.payment_box:after,
+.woocommerce-page #payment div.payment_box:after {
+	border-bottom-color: #fff;
+}
+
+.ef-bottom-angle .ef-header-angle {
+	border-top-color: #fff;
+}
+
+.ef-header-angle,
+#ef-sidebar .ef-widget {
+	border-bottom-color: #fff;
+}
+
+body,
+.ef-post-edit-link,
+#ef-list-categories > ul,
+.single .ef-author-info,
+.ef-comment-edit-link,
+#ef-video-header .mejs-container,
+#ef-loading-overlay,
+.woocommerce #content div.product .woocommerce-tabs ul.tabs,
+.woocommerce div.product .woocommerce-tabs ul.tabs,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs,
+.woocommerce-page div.product .woocommerce-tabs ul.tabs,
+.woocommerce form.checkout_coupon,
+.woocommerce-page form.checkout_coupon,
+.woocommerce .myaccount_user,
+.woocommerce-page .myaccount_user,
+.woocommerce ul.products li.product mark,
+.woocommerce-page ul.products li.product mark,
+.woocommerce .order-info mark,
+.woocommerce-page .order-info mark,
+.widget #wp-calendar {
+	background-color: #f5f5f5;
+}
+
+.ef-comment-num,
+.ef-classic-blog #ef-list-categories ul ul a,
+.ef-min-blog #ef-list-categories ul ul a {
+	color: #f1f1f1;
+}
+
+#commentform input:not(#submit),
+#commentform textarea,
+.comment.post-comm,
+#ef-team > article.type-team,
+#ef-blog .ef-min-blog .ef-post.type-post,
+#ef-content > main > header.entry-header,
+.woocommerce #review_form #respond div.comment-form-rating,
+.woocommerce-page #review_form #respond div.comment-form-rating,
+.woocommerce #reviews #comments ol.commentlist li,
+.woocommerce-page #reviews #comments ol.commentlist li {
+	border-color: #f0f0f0;
+}
+
+#ef-blog .ef-min-blog .ef-proj-img > a.btn:before,
+#ef-min-header:before {
+	color: #eaeaea;
+}
+
+#ef-sidebar,
+.woocommerce #payment,
+.woocommerce-page #payment,
+.woocommerce .cart-collaterals .shipping_calculator > h2,
+.woocommerce-page .cart-collaterals .shipping_calculator > h2 {
+	background-color: #efefef;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+#ef-sidebar .widget_calendar td#next,
+#ef-sidebar .widget_calendar td#prev,
+#ef-sidebar .widget_calendar table tfoot {
+	border-color: #efefef;
+}
+
+.ef-widget ul li > ul {
+	border-color: #cfcfcf;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+	background-color: #efefef;
+}
+
+a:hover, a:focus, p > a:hover, p > a:focus,
+#ef-slideshow-nav a:hover,
+#ef-to-content:hover,
+#ef-to-project:hover,
+#ef-head-social a:hover,
+.ef-social-block > a:hover,
+#ef-team .owl-buttons > div:hover,
+#ef-site-nav .btn:hover, ul.ef-share-buttons li > a:hover,
+.ef-widget a:hover,
+#ef-prev-project:hover,
+#ef-next-project:hover,
+#ef-blog .ef-post .ef-proj-img > a:not(.btn):hover,
+.ef-post-author > a:hover,
+.ef-location > a:hover,
+.ef-edit-attachment-link > .post-edit-link:hover,
+.ef-nextpage > a:hover,
+.archive.category #ef-list-categories .current-cat > a,
+.ef-post.type-post .ef-proj-desc > a:hover,
+.ef-posted-on li > a:hover,
+.ef-posted-in li > a:hover,
+#sb-custom-prev:hover,
+#sb-custom-next:hover,
+h1 > a:hover,
+h2 > a:hover,
+h3 > a:hover,
+h4 > a:hover,
+h5 > a:hover,
+h6 > a:hover,
+#ef-project-details a:hover,
+.product_meta a:hover {
+	color: #aeaeae;
+}
+
+#ef-latest-nav h5,
+body.ef-dark-adjustor,
+.ef-comments-title > span,
+.ef-entry-caption,
+.archive .ef-author-posts,
+#ef-back-cats,
+.wp-caption-text.gallery-caption,
+.ef-gallery-outer .wp-caption-text.gallery-caption,
+.ef-pass,
+#sb-progress > span,
+.ef-dark-adjustor #ef-video-header .mejs-container,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce-page .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce #reviews #comments ol.commentlist li:after,
+.woocommerce-page #reviews #comments ol.commentlist li:after,
+.ef-classic-blog #ef-list-categories ul ul,
+.ef-min-blog #ef-list-categories ul ul,
+#ef-expand-map:before {
+	background-color: #262626;
+}
+
+#ef-toggle-menu > span,
+#ef-toggle-menu > span:after,
+#ef-toggle-menu > span:before,
+.page-template-templateshome-template-php.ef-dark-adjustor:not(.ef-header-out):not(.ef-home-default) #ef-toggle-menu > span,
+.page-template-templateshome-template-php.ef-dark-adjustor:not(.ef-header-out):not(.ef-home-default) #ef-toggle-menu > span:before,
+.page-template-templateshome-template-php.ef-dark-adjustor:not(.ef-header-out):not(.ef-home-default) #ef-toggle-menu > span:after,
+.ef-underlined-title:after,
+.ef-widget-title,
+.tagcloud li a,
+#ef-to-content:hover:before,
+.well,
+.ef-widget-title:after,
+.btn-link:hover:after,
+.ef-service:after,
+.nav-tabs,
+.ef-author-info,
+.ef-current-page-num,
+#ef-toggle-menu,
+.top-bar-section ul li > a:hover:before,
+.top-bar-section ul li.active > a:before,
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > li > span.current,
+#ef-footer-inner #ef-social-bar > li > a:hover:after,
+#commentform.comment-form input:not(#submit):focus,
+#commentform.comment-form textarea:focus,
+#ef-portfolio-filter a:hover > span,
+#ef-portfolio-filter li:first-child a > span,
+#ef-to-parent:before,
+#ef-to-parent:after,
+.ef-dark-adjustor.ef-header-out #ef-to-parent:before,
+.ef-dark-adjustor.ef-header-out #ef-to-parent:after,
+#ef-to-content:after,
+#ef-project-details p,
+#ef-blog .ef-min-blog .ef-post.type-post:hover,
+#ef-loader .ef-loader-1,
+#ef-loader .ef-loader-2,
+.woocommerce #content input.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce-page #content input.button,
+.woocommerce-page #respond input#submit,
+.woocommerce-page a.button,
+.woocommerce-page button.button,
+.woocommerce-page input.button,
+.woocommerce a.button.loading,
+.woocommerce button.button.loading,
+.woocommerce input.button.loading,
+.woocommerce-page #content input.button.loading,
+.woocommerce-page #respond input#submit.loading,
+.woocommerce-page a.button.loading,
+.woocommerce-page button.button.loading,
+.woocommerce-page input.button.loading,
+.woocommerce #content .quantity input.qty,
+.woocommerce .quantity input.qty,
+.woocommerce #content .quantity .minus,
+.woocommerce #content .quantity .plus,
+.woocommerce .quantity .minus,
+.woocommerce .quantity .plus,
+.woocommerce-page #content .quantity .minus,
+.woocommerce-page #content .quantity .plus,
+.woocommerce-page .quantity .minus,
+.woocommerce-page .quantity .plus,
+.woocommerce textarea,
+.woocommerce-page textarea,
+.woocommerce select,
+.woocommerce-page select,
+.woocommerce input[type=text],
+.woocommerce-page input[type=text],
+.woocommerce input[type=password],
+.woocommerce-page input[type=password],
+.woocommerce input[type=date],
+.woocommerce-page input[type=search],
+.woocommerce table.cart td.actions .coupon .input-text,
+.woocommerce #content table.cart td.actions .coupon .input-text,
+.woocommerce-page table.cart td.actions .coupon .input-text,
+.woocommerce-page #content table.cart td.actions .coupon .input-text,
+#ef-woo-shopping-cart a.cart-contents,
+#ef-woo-shopping-cart a.cart-contents:before,
+#ef-expand-map,
+#ef-wpml-lang-switcher > li,
+.wpcf7-form-control-wrap input:not([type="submit"]),
+.wpcf7-form-control-wrap textarea {
+	border-color: #262626;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+	border-top-color: #262626;
+	border-left-color: #262626;
+	border-right-color: #262626;
+}
+
+.nav-tabs > li > a:hover,
+.ef-classic-blog #ef-list-categories > ul > li > ul:before,
+.ef-min-blog #ef-list-categories > ul > li > ul:before {
+	border-bottom-color: #262626;
+}
+
+body, h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
+.navbar-brand > a,
+#ef-slideshow-nav a,
+#ef-main-description a,
+#ef-to-project,
+.ef-social-block > a, blockquote small, blockquote .small,
+.ef-widget a,
+.ef-post.type-portfolios:hover .ef-proj-desc > a,
+.ef-dark-adjustor #ef-welcome-block .label,
+.flex-direction-nav a,
+.slide_desc a,
+.slide_desc a:hover, ul.ef-share-buttons li > a,
+#ef-prev-project,
+#ef-next-project,
+.cbp-l-loadMore-text-link,
+.ef-posted-on li > a,
+.ef-posted-in li > a,
+.tagcloud li a,
+.ef-post-author > a,
+#ef-portfolio-filter li a,
+.ef-location > a,
+#ef-footer .ef-social-block a:hover,
+#ef-footer .ef-social-block a:focus,
+.ef-dark-adjustor.ef-header-out:not(.page-template-templateshome-template-php) #ef-controls-bar,
+.ef-post-edit-link > a,
+.ef-edit-attachment-link > .post-edit-link,
+#ef-list-categories a,
+.ef-attachment-nav > li > a,
+.ef-nextpage > a,
+.ef-post.type-post .ef-proj-desc > a,
+#ef-blog .type-portfolios .ef-proj-img > a:hover,
+.top-bar-section ul li > a,
+.btn.btn-default,
+.btn-default:hover,
+#ef-blog .ef-proj-img > a.btn:hover:before,
+#ef-controls #ef-toggle-share > a,
+.ef-author-posts,
+.ef-author-posts:hover,
+.comment-reply-link,
+.comment-reply-link:hover,
+.comment-reply-link:focus,
+.ef-post-edit-link:hover > a,
+.ef-post-edit-link:hover,
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+#fireform-slider-wrapper .flex-control-paging a:before,
+#fireform-slider-wrapper .flex-control-paging a:after,
+.pagination > li.active > a,
+.pagination > li.active > a:hover,
+.pagination > li.active > a:focus,
+.pagination > li > span.current,
+.pagination > li > a,
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+#ef-social-bar > li > a,
+.ef-comment-edit-link:hover,
+.cbp-l-loadMore-text .cbp-l-loadMore-text-link,
+.alert a,
+.ef-team-social > a,
+#ef-portfolio-filter a:hover > span,
+#ef-portfolio-filter li:first-child a > span,
+.ef-member-pos,
+#ef-to-content,
+#ef-project-details a,
+#ef-blog .ef-min-blog .ef-post.type-post:hover .ef-proj-img > a.btn:before,
+.widget_recent_entries ul li > a:hover,
+.woocommerce #content input.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce-page #content input.button,
+.woocommerce-page #respond input#submit,
+.woocommerce-page a.button,
+.woocommerce-page button.button,
+.woocommerce-page input.button,
+.woocommerce ul.products li.product h3,
+.woocommerce-page ul.products li.product h3,
+.woocommerce ul.products li.product .price del,
+.woocommerce-page ul.products li.product .price del,
+.woocommerce ul.products li.product .price span.amount,
+.woocommerce-page ul.products li.product .price span.amount,
+.woocommerce ul.products li.product .price ins,
+.woocommerce-page ul.products li.product .price ins,
+.woocommerce #content input.button.added:before,
+.woocommerce #respond input#submit.added:before,
+.woocommerce a.button.added:before,
+.woocommerce button.button.added:before,
+.woocommerce input.button.added:before,
+.woocommerce-page #content input.button.added:before,
+.woocommerce-page #respond input#submit.added:before,
+.woocommerce-page a.button.added:before,
+.woocommerce-page button.button.added:before,
+.woocommerce-page input.button.added:before,
+.woocommerce ul.products li.product .onsale,
+.woocommerce-page ul.products li.product .onsale,
+.woocommerce span.onsale,
+.woocommerce-page span.onsale,
+.woocommerce #content input.button.loading,
+.woocommerce #respond input#submit.loading,
+.woocommerce a.button.loading,
+.woocommerce button.button.loading,
+.woocommerce input.button.loading,
+.woocommerce-page #content input.button.loading,
+.woocommerce-page #respond input#submit.loading,
+.woocommerce-page a.button.loading,
+.woocommerce-page button.button.loading,
+.woocommerce-page input.button.loading,
+.woocommerce a.added_to_cart,
+.woocommerce-page a.added_to_cart,
+.woocommerce a.added_to_cart:hover,
+.woocommerce-page a.added_to_cart:hover,
+.woocommerce #content input.button.alt,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce-page #content input.button.alt,
+.woocommerce-page #respond input#submit.alt,
+.woocommerce-page a.button.alt,
+.woocommerce-page button.button.alt,
+.woocommerce-page input.button.alt,
+.woocommerce #content input.button.alt:hover,
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce-page #content input.button.alt:hover,
+.woocommerce-page #respond input#submit.alt:hover,
+.woocommerce-page a.button.alt:hover,
+.woocommerce-page button.button.alt:hover,
+.woocommerce-page input.button.alt:hover,
+.woocommerce div.product p.price del,
+.woocommerce-page div.product p.price del,
+.woocommerce #content div.product p.price,
+.woocommerce #content div.product span.price,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce-page #content div.product p.price,
+.woocommerce-page #content div.product span.price,
+.woocommerce-page div.product p.price,
+.woocommerce-page div.product span.price,
+.woocommerce .woocommerce-product-rating .woocommerce-review-link,
+.woocommerce-page .woocommerce-product-rating .woocommerce-review-link,
+.woocommerce #content div.product .woocommerce-tabs ul.tabs li a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li a,
+.woocommerce-page div.product .woocommerce-tabs ul.tabs li a,
+.product_meta a,
+.woocommerce #content div.product form.cart .variations label,
+.woocommerce div.product form.cart .variations label,
+.woocommerce-page #content div.product form.cart .variations label,
+.woocommerce-page div.product form.cart .variations label,
+.woocommerce .shop_table a:not(.button),
+.woocommerce-page .shop_table a:not(.button),
+.woocommerce .myaccount_user a,
+.woocommerce-page .myaccount_user a,
+.woocommerce .woocommerce-error a,
+.woocommerce .woocommerce-info a,
+.woocommerce .woocommerce-message a,
+.woocommerce-page .woocommerce-error a,
+.woocommerce-page .woocommerce-info a,
+.woocommerce-page .woocommerce-message a,
+.woocommerce .shop_table .product-name a,
+#ef-woo-shopping-cart a.cart-contents > span,
+#ef-woo-shopping-cart a,
+.woocommerce #reviews #comments ol.commentlist li .meta,
+.woocommerce-page #reviews #comments ol.commentlist li .meta,
+#ef-wpml-lang-switcher a {
+	color: #262626;
+}
+
+input.wpcf7-form-control::-moz-placeholder,
+textarea.wpcf7-form-control::-moz-placeholder {
+	color: #262626;
+}
+
+input.wpcf7-form-control:-ms-input-placeholder,
+textarea.wpcf7-form-control:-ms-input-placeholder {
+	color: #262626;
+}
+
+input.wpcf7-form-control::-webkit-input-placeholder,
+textarea.wpcf7-form-control::-webkit-input-placeholder {
+	color: #262626;
+}
+
+.ef-dark-adjustor.slide_desc a:hover {
+	color: rgba(255,255,255,.75);
+}
+
+.slide_desc a:hover {
+	color: rgba(0,0,0,.5);
+}
+
+.mejs-overlay-button {
+	background: rgba(0,0,0,.5);
+}
+
+.ef-attachment-nav > li > a:hover:before {
+	background: rgba(255,255,255,.75);
+}
+
+#ef-portfolio .ef-post:hover .ef-proj-desc:before,
+#ef-blog .ef-post.type-portfolios:hover .ef-proj-desc:before {
+	background: rgba(255,255,255,.98);
+}
+
+@media only screen and (max-width: 1200px) {
+	body.ef-dark-adjustor.ef-menu-active,
+	.ef-no-header #ef-site-name,
+	.ef-menu-active #ef-site-name,
+	.page-template-templateshome-template-php:not(.ef-home-default) #ef-site-name {
+		background-color: #fff;
+	}
+}
