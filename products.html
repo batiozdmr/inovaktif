@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js ino-shop">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="description" content="Inovaktif Technologies - Boxing Equipment &amp; Gear">
+    <meta name="author" content="Inovaktif Medya">
+    <title>Boxing Products | Inovaktif Technologies</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/new_IM3.png"/>
+    <script>
+        if (typeof WebFontConfig === "undefined") { WebFontConfig = new Object(); }
+        WebFontConfig['google'] = {families: ['Montserrat:400,700', 'Muli:300,400,300italic,400italic']};
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js';
+            wf.type = 'text/javascript'; wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <link rel='stylesheet' href='assets/js/vendor/jquery-ui/jquery-ui.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/shortcodes.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/bootstrap.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/topbar.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/fontello/css/fontello.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/fontello/css/animation.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/taras-font/css/styles.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/style.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/colors.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/brama-custom.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/shadowbox.min.css' type='text/css' media='screen'/>
+    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery-migrate.min.js"></script>
+    <style>
+        .shop-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 80px 0 60px; text-align: center; color: #fff; }
+        .shop-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 2.4em; font-weight: 700; margin-bottom: 10px; letter-spacing: 2px; }
+        .shop-hero p { font-family: 'Muli', sans-serif; font-size: 1.1em; opacity: .8; }
+        .shop-section { padding: 60px 0; background: #f9f9f9; }
+        .shop-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .shop-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; justify-content: center; }
+        .filter-btn { padding: 8px 20px; border: 2px solid #333; background: transparent; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: all .25s; border-radius: 2px; }
+        .filter-btn:hover, .filter-btn.active { background: #333; color: #fff; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        .product-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 15px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,.15); }
+        .product-img { position: relative; overflow: hidden; height: 220px; }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+        .product-card:hover .product-img img { transform: scale(1.05); }
+        .product-badge { position: absolute; top: 14px; left: 14px; background: #e74c3c; color: #fff; padding: 4px 12px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 2px; }
+        .product-badge.green { background: #27ae60; }
+        .product-badge.blue { background: #2980b9; }
+        .product-body { padding: 24px; }
+        .product-cat { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 8px; }
+        .product-name { font-family: 'Montserrat', sans-serif; font-size: 1.05em; font-weight: 700; color: #222; margin-bottom: 10px; line-height: 1.4; }
+        .product-desc { font-family: 'Muli', sans-serif; font-size: .9em; color: #666; line-height: 1.6; margin-bottom: 18px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .product-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .product-price { font-family: 'Montserrat', sans-serif; font-size: 1.3em; font-weight: 700; color: #222; }
+        .product-price small { font-size: .55em; font-weight: 400; color: #999; display: block; }
+        .btn-detail { padding: 9px 16px; border: 2px solid #333; background: transparent; color: #333; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .25s; text-decoration: none; }
+        .btn-detail:hover { background: #333; color: #fff; }
+        .btn-cart { padding: 9px 16px; background: #333; color: #fff; border: 2px solid #333; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .25s; }
+        .btn-cart:hover { background: #555; border-color: #555; }
+        .cart-float { position: fixed; bottom: 30px; left: 30px; background: #222; color: #fff; padding: 14px 24px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; text-decoration: none; z-index: 999; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,.3); transition: background .2s; }
+        .cart-float:hover { background: #444; color: #fff; text-decoration: none; }
+        .cart-float .cart-badge { background: #e74c3c; color: #fff; border-radius: 50%; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+        .nav-cart-link { display: flex !important; align-items: center; gap: 6px; }
+        .nav-cart-badge { background: #e74c3c; color: #fff; border-radius: 50%; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+    </style>
+</head>
+
+<div id="ef-loading-overlay"></div>
+<div id="ef-tpl-wrapper">
+    <header id="ef-header" class="ef-positioner">
+        <div id="ef-site-name">
+            <div class="navbar-brand">
+                <a id="ef-logo" href="index.html" title="Inovaktif Technologies">
+                    <img class="ef-default-logo" src="assets/images/new_IM3.png" alt="Inovaktif Technologies"/>
+                    <img class="ef-white-logo" src="assets/images/new_IM3_bw-1.png" alt="Inovaktif Technologies"/>
+                </a>
+            </div>
+            <div id="ef-controls-bar">
+                <a href="#" id="ef-toggle-menu"><span></span></a>
+            </div>
+        </div>
+        <div id="ef-site-nav">
+            <div id="ef-site-nav-inner">
+                <a class="ef-default-logo1" href="index.html"><img src="assets/images/new_IM3.png" alt=""/></a>
+                <div id="ef-brand">
+                    <h1>Inovaktif Technologies</h1>
+                    <em class="ef-fancy">Creative Digital Solutions</em>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 clearfix">
+                        <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: true">
+                            <ul class="title-area">
+                                <li class="name"></li>
+                                <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+                            </ul>
+                            <section class="top-bar-section">
+                                <ul id="menu-menu-1" class="top-bar-menu left">
+                                    <li class="menu-item menu-item-has-children has-dropdown"><a href="index.html">Inovaktif</a>
+                                        <ul class="sub-menu dropdown">
+                                            <li><a href="information-security-policy.html">Information Security Policy</a></li>
+                                            <li><a href="cookie-policy.html">Inovaktif Cookie Policy</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item"><a href="investments.html">Investments</a></li>
+                                    <li class="menu-item"><a href="solutions.html">Solutions</a></li>
+                                    <li class="menu-item active"><a href="products.html">Products</a></li>
+                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                                    <li class="menu-item"><a href="cart.html" class="nav-cart-link">Cart <span class="nav-cart-badge cart-badge" style="display:none">0</span></a></li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6">
+                        <aside id="ef-menu-widgets">
+                            <div class="row">
+                                <section class="ef-widget widget_block widget_text col-lg-3 col-md-6">
+                                    <div class="widget">
+                                        <p><strong>About Us</strong><br>Inovaktif specializes in helping corporations and consumers use software as a service tools, products to better micro mobility and applications to connect with customers and prospects.</p>
+                                    </div>
+                                </section>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <ul id="ef-controls">
+                <li id="ef-toggle-share">
+                    <span class="ts-icon-share"></span>
+                    <ul class="ef-share-buttons">
+                        <li><a title="LinkedIn" class="icon-ef-linkedin" href="https://www.linkedin.com/company/577682" target="_blank"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="ef-loader"><div class="ef-loader-1"></div><div class="ef-loader-2"></div></div>
+        <div id="ef-header-inner" class="text-center">
+            <div id="ef-welcome-block">
+                <h1 id="ef-main-title">Boxing Products</h1>
+                <div class="clear"></div>
+                <div id="ef-main-description">Professional boxing gloves, bags, apparel and training gear</div>
+            </div>
+        </div>
+        <div id="ef-header-angle" class="clearfix">
+            <span class="ef-header-angle"></span>
+            <a id="ef-to-content" href="#"></a>
+        </div>
+    </header>
+
+    <section id="ef-content">
+        <main class="clearfix">
+            <div class="shop-section">
+                <div class="shop-container">
+                    <div class="shop-filters" id="shopFilters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="Gloves">Gloves</button>
+                        <button class="filter-btn" data-filter="Bags">Bags</button>
+                        <button class="filter-btn" data-filter="Apparel">Apparel</button>
+                        <button class="filter-btn" data-filter="Protection">Protection</button>
+                        <button class="filter-btn" data-filter="Training">Training</button>
+                        <button class="filter-btn" data-filter="Kits">Kits</button>
+                    </div>
+                    <div class="products-grid" id="productsGrid"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="ef-footer" class="clearfix">
+            <div id="ef-footer-inner" class="text-center">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <ul id="ef-social-bar" class="list-inline">
+                            <li><a class="icon-ef-linkedin" target="_blank" href="https://www.linkedin.com/company/577682" title="LinkedIn"></a></li>
+                            <li><a class="icon-ef-mail" target="_blank" href="contact.html" title="Send Mail"></a></li>
+                        </ul>
+                        <div data-ino-shop-footer></div>
+                        <p style="margin:0;">&copy; 2024 Inovaktif - <a href="https://tanfer.group/" target="_blank">a Tanfer Group Company</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+
+<a href="cart.html" class="cart-float" id="cartFloat" style="display:none;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    Cart <span class="cart-badge" style="display:none;">0</span>
+</a>
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/foundation.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="assets/js/smartresize.min.js"></script>
+<script type="text/javascript" src="assets/js/shadowbox/shadowbox.js"></script>
+<script type="text/javascript" src="assets/js/ef-vars.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/cart.js"></script>
+<script type="text/javascript" src="assets/js/shop-ui.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var products = InoCart.getAllProducts();
+    var currentFilter = 'all';
+
+    function renderProducts(filter) {
+        var grid = document.getElementById('productsGrid');
+        var filtered = filter === 'all' ? products : products.filter(function(p){ return p.category === filter; });
+        var badgeColors = { 'Popular': '', 'Best Seller': 'blue', 'New': 'green', 'Essential': 'blue', 'Pro': '', 'Training': 'blue', 'Premium': '', 'Safety': 'green', 'Cardio': 'blue', 'Complete': 'blue' };
+        grid.innerHTML = filtered.map(function(p){
+            var bc = badgeColors[p.badge] || '';
+            return '<div class="product-card" data-category="'+p.category+'">' +
+                '<div class="product-img">' +
+                '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy"/>' +
+                '<span class="product-badge '+bc+'">'+p.badge+'</span>' +
+                '</div>' +
+                '<div class="product-body">' +
+                '<div class="product-cat">'+p.category+'</div>' +
+                '<div class="product-name">'+p.name+'</div>' +
+                '<div class="product-desc">'+p.description+'</div>' +
+                '<div class="product-footer">' +
+                '<div class="product-price">'+InoCart.formatPrice(p.price)+'<small>+ VAT</small></div>' +
+                '<div style="display:flex;gap:8px;">' +
+                '<a href="product-detail.html?id='+p.id+'" class="btn-detail">Details</a>' +
+                '<button class="btn-cart" onclick="addToCart('+p.id+')">Add to Cart</button>' +
+                '</div></div></div></div>';
+        }).join('');
+    }
+
+    renderProducts('all');
+
+    document.getElementById('shopFilters').addEventListener('click', function(e){
+        if(e.target.classList.contains('filter-btn')){
+            document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+            e.target.classList.add('active');
+            renderProducts(e.target.dataset.filter);
+        }
+    });
+
+    updateCartFloat();
+});
+
+function addToCart(id) {
+    InoCart.addItem(id);
+    updateCartFloat();
+}
+
+function updateCartFloat() {
+    var count = InoCart.getCartCount();
+    var fl = document.getElementById('cartFloat');
+    if(fl) fl.style.display = count > 0 ? 'flex' : 'none';
+}
+</script>
+</body>
+</html>

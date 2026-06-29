@@ -1,4 +1,60 @@
 
+/* Inovaktif Shop */
+.ino-legal-links { margin: 16px 0; }
+.ino-legal-links a {
+    color: #aaa;
+    font-size: 12px;
+    margin: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+.ino-legal-links a:hover { color: #fff; text-decoration: underline; }
+.ino-payment-badges {
+    margin-bottom: 16px;
+    text-align: center;
+}
+.ino-secure-payment-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0 0 12px;
+}
+.ino-payment-banner-wrap {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+.ino-payment-band {
+    max-width: 100%;
+    width: 520px;
+    height: auto;
+    display: block;
+}
+.ino-iyzico-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+.ino-iyzico-badge {
+    max-width: 160px;
+    height: auto;
+    display: block;
+}
+#ef-footer .ino-secure-payment-label {
+    color: #888;
+}
+.order-summary .ino-payment-badges,
+.cart-summary .ino-payment-badges {
+    margin-top: 4px;
+}
+.order-summary .ino-secure-payment-label,
+.cart-summary .ino-secure-payment-label {
+    color: #aaa;
+}
+
 .ef-home-default .slide_desc, html.no-js .ef-home-default .html-desc {
     left: 140px;
 }
@@ -221,4 +277,57 @@ blockquote, q, #ef-main-description em, .ef-fancy {
 
 
 /* Custom CSS */
+
+#ef-header-inner {
+    min-height: 100vh !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+html.js #ef-welcome-block,
+html.ino-shop #ef-welcome-block {
+    top: auto !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transform: none !important;
+    position: relative !important;
+}
+
+/* Compact shop page headers */
+html.ino-shop #ef-header-inner {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 88px 140px 20px !important;
+}
+
+html.ino-shop #ef-welcome-block #ef-main-title {
+    font-size: 1.35em;
+    padding: 2px 0 10px;
+    margin-bottom: 6px;
+    border-bottom-width: 4px;
+}
+
+html.ino-shop #ef-welcome-block #ef-main-description {
+    font-size: 0.95em !important;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+html.ino-shop #ef-header-angle {
+    height: 48px;
+}
+
+html.ino-shop .ef-header-angle {
+    border-bottom-width: 48px;
+}
+
+@media (max-width: 1024px) {
+    html.ino-shop #ef-header-inner {
+        padding: 80px 20px 16px !important;
+    }
+}
 

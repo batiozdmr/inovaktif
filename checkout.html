@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js ino-shop">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>Checkout | Inovaktif Technologies</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/new_IM3.png"/>
+    <script>
+        if (typeof WebFontConfig === "undefined") { WebFontConfig = new Object(); }
+        WebFontConfig['google'] = {families: ['Montserrat:400,700', 'Muli:300,400,300italic,400italic']};
+        (function () { var wf = document.createElement('script'); wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js'; wf.type = 'text/javascript'; wf.async = 'true'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wf, s); })();
+    </script>
+    <link rel='stylesheet' href='assets/js/vendor/jquery-ui/jquery-ui.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/shortcodes.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/bootstrap.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/topbar.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/fontello/css/fontello.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/fontello/css/animation.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/taras-font/css/styles.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/style.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/colors.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/brama-custom.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/shadowbox.min.css' type='text/css' media='screen'/>
+    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery-migrate.min.js"></script>
+    <style>
+        .checkout-section { padding: 60px 0; background: #f9f9f9; min-height: 60vh; }
+        .checkout-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .checkout-layout { display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: start; }
+        @media(max-width:900px){ .checkout-layout { grid-template-columns: 1fr; } }
+        .steps-bar { display: flex; align-items: center; margin-bottom: 40px; }
+        .step { display: flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #ccc; }
+        .step.active { color: #222; }
+        .step.done { color: #27ae60; }
+        .step-num { width: 28px; height: 28px; border-radius: 50%; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+        .step.active .step-num { background: #222; color: #fff; }
+        .step.done .step-num { background: #27ae60; color: #fff; }
+        .step-line { flex: 1; height: 2px; background: #ddd; margin: 0 12px; }
+        .form-card { background: #fff; border-radius: 4px; box-shadow: 0 2px 15px rgba(0,0,0,.06); padding: 32px; margin-bottom: 24px; }
+        .form-card-title { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #222; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media(max-width:600px){ .form-row { grid-template-columns: 1fr; } }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #555; margin-bottom: 7px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 2px solid #e8e8e8; border-radius: 3px; font-family: 'Muli', sans-serif; font-size: .9em; color: #333; outline: none; transition: border-color .2s; background: #fff; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #333; }
+        .form-group.full { grid-column: 1 / -1; }
+        .card-input-wrap { position: relative; }
+        .card-icons { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); display: flex; gap: 4px; }
+        .payment-tabs { display: flex; gap: 0; margin-bottom: 24px; border: 2px solid #e8e8e8; border-radius: 3px; overflow: hidden; }
+        .payment-tab { flex: 1; padding: 12px; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #999; cursor: pointer; background: #f9f9f9; border: none; border-right: 2px solid #e8e8e8; transition: all .2s; }
+        .payment-tab:last-child { border-right: none; }
+        .payment-tab.active { background: #222; color: #fff; }
+        .agreement-check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+        .agreement-check input[type=checkbox] { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; }
+        .agreement-check label { font-family: 'Muli', sans-serif; font-size: .85em; color: #555; line-height: 1.5; }
+        .agreement-check a { color: #222; font-weight: 700; }
+        .btn-pay { display: block; width: 100%; padding: 16px; background: #222; color: #fff; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 3px; transition: background .2s; margin-top: 10px; }
+        .btn-pay:hover { background: #444; }
+        .order-summary { background: #fff; border-radius: 4px; box-shadow: 0 2px 15px rgba(0,0,0,.06); padding: 28px; position: sticky; top: 20px; }
+        .order-title { font-family: 'Montserrat', sans-serif; font-size: 1em; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
+        .order-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #f5f5f5; }
+        .order-item img { width: 56px; height: 40px; object-fit: cover; border-radius: 3px; flex-shrink: 0; }
+        .order-item-info { flex: 1; }
+        .order-item-name { font-family: 'Montserrat', sans-serif; font-size: .82em; font-weight: 700; color: #222; margin-bottom: 3px; }
+        .order-item-cat { font-family: 'Muli', sans-serif; font-size: .78em; color: #999; }
+        .order-item-price { font-family: 'Montserrat', sans-serif; font-size: .9em; font-weight: 700; color: #222; white-space: nowrap; }
+        .order-totals { margin-top: 16px; }
+        .order-totals .row-line { display: flex; justify-content: space-between; padding: 8px 0; font-family: 'Muli', sans-serif; font-size: .88em; color: #666; border-bottom: 1px solid #f5f5f5; }
+        .order-totals .row-line span { font-weight: 700; color: #333; }
+        .order-totals .row-total { display: flex; justify-content: space-between; padding: 14px 0 0; font-family: 'Montserrat', sans-serif; font-size: 1.05em; font-weight: 700; color: #222; }
+        .secure-badges { margin-top: 20px; padding-top: 20px; border-top: 1px solid #f0f0f0; }
+        .secure-badges p { font-family: 'Muli', sans-serif; font-size: .8em; color: #999; text-align: center; margin-bottom: 10px; }
+        .pay-logos { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        /* Modal */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9999; align-items: center; justify-content: center; }
+        .modal-overlay.open { display: flex; }
+        .modal-box { background: #fff; border-radius: 6px; max-width: 480px; width: 92%; padding: 48px 40px; text-align: center; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,.25); animation: slideUp .3s ease; }
+        @keyframes slideUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+        .modal-icon { font-size: 3em; margin-bottom: 16px; }
+        .modal-title { font-family: 'Montserrat', sans-serif; font-size: 1.3em; font-weight: 700; color: #222; margin-bottom: 14px; }
+        .modal-text { font-family: 'Muli', sans-serif; font-size: .95em; color: #555; line-height: 1.7; margin-bottom: 24px; }
+        .modal-text strong { color: #222; }
+        .modal-close { padding: 12px 32px; background: #222; color: #fff; border: none; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 3px; transition: background .2s; }
+        .modal-close:hover { background: #444; }
+        .modal-x { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 20px; cursor: pointer; color: #ccc; line-height: 1; }
+        .modal-x:hover { color: #333; }
+    </style>
+</head>
+<div id="ef-loading-overlay"></div>
+<div id="ef-tpl-wrapper">
+    <header id="ef-header" class="ef-positioner">
+        <div id="ef-site-name">
+            <div class="navbar-brand">
+                <a id="ef-logo" href="index.html" title="Inovaktif Technologies">
+                    <img class="ef-default-logo" src="assets/images/new_IM3.png" alt="Inovaktif Technologies"/>
+                    <img class="ef-white-logo" src="assets/images/new_IM3_bw-1.png" alt="Inovaktif Technologies"/>
+                </a>
+            </div>
+            <div id="ef-controls-bar"><a href="#" id="ef-toggle-menu"><span></span></a></div>
+        </div>
+        <div id="ef-site-nav">
+            <div id="ef-site-nav-inner">
+                <a class="ef-default-logo1" href="index.html"><img src="assets/images/new_IM3.png" alt=""/></a>
+                <div id="ef-brand"><h1>Inovaktif Technologies</h1><em class="ef-fancy">Creative Digital Solutions</em></div>
+                <div class="row">
+                    <div class="col-lg-6 clearfix">
+                        <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: true">
+                            <ul class="title-area"><li class="name"></li><li class="toggle-topbar menu-icon"><a href="#">Menu</a></li></ul>
+                            <section class="top-bar-section">
+                                <ul id="menu-menu-1" class="top-bar-menu left">
+                                    <li class="menu-item menu-item-has-children has-dropdown"><a href="index.html">Inovaktif</a>
+                                        <ul class="sub-menu dropdown">
+                                            <li><a href="information-security-policy.html">Information Security Policy</a></li>
+                                            <li><a href="cookie-policy.html">Inovaktif Cookie Policy</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item"><a href="investments.html">Investments</a></li>
+                                    <li class="menu-item"><a href="solutions.html">Solutions</a></li>
+                                    <li class="menu-item"><a href="products.html">Products</a></li>
+                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                                    <li class="menu-item"><a href="cart.html">Cart <span class="cart-badge" style="display:none;background:#e74c3c;color:#fff;border-radius:50%;padding:1px 5px;font-size:10px;">0</span></a></li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6">
+                        <aside id="ef-menu-widgets"><div class="row"><section class="ef-widget widget_block widget_text col-lg-3 col-md-6"><div class="widget"><p><strong>About Us</strong><br>Inovaktif specializes in helping corporations and consumers use software as a service tools.</p></div></section></div></aside>
+                    </div>
+                </div>
+            </div>
+            <ul id="ef-controls"><li id="ef-toggle-share"><span class="ts-icon-share"></span><ul class="ef-share-buttons"><li><a title="LinkedIn" class="icon-ef-linkedin" href="https://www.linkedin.com/company/577682" target="_blank"></a></li></ul></li></ul>
+        </div>
+        <div id="ef-loader"><div class="ef-loader-1"></div><div class="ef-loader-2"></div></div>
+        <div id="ef-header-inner" class="text-center">
+            <div id="ef-welcome-block">
+                <h1 id="ef-main-title">Secure Checkout</h1>
+                <div class="clear"></div>
+                <div id="ef-main-description">Enter your details and complete your order</div>
+            </div>
+        </div>
+        <div id="ef-header-angle" class="clearfix"><span class="ef-header-angle"></span><a id="ef-to-content" href="#"></a></div>
+    </header>
+
+    <section id="ef-content">
+        <main class="clearfix">
+            <div class="checkout-section">
+                <div class="checkout-container">
+
+                    <div class="steps-bar">
+                        <div class="step done"><span class="step-num">✓</span> Cart</div>
+                        <div class="step-line"></div>
+                        <div class="step active"><span class="step-num">2</span> Payment</div>
+                        <div class="step-line"></div>
+                        <div class="step"><span class="step-num">3</span> Confirmation</div>
+                    </div>
+
+                    <div class="checkout-layout">
+                        <div>
+                            <!-- Billing Information -->
+                            <div class="form-card">
+                                <div class="form-card-title">📋 Billing / Contact Information</div>
+                                <div class="form-row">
+                                    <div class="form-group"><label>First Name *</label><input type="text" placeholder="Your first name" id="fName"/></div>
+                                    <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Your last name" id="fLastname"/></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group"><label>Email *</label><input type="email" placeholder="name@company.com" id="fEmail"/></div>
+                                    <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+90 5xx xxx xx xx" id="fPhone"/></div>
+                                </div>
+                                <div class="form-group"><label>Company Name</label><input type="text" placeholder="Company name (optional)" id="fCompany"/></div>
+                                <div class="form-row">
+                                    <div class="form-group"><label>Tax Office</label><input type="text" placeholder="Tax office" id="fTaxOffice"/></div>
+                                    <div class="form-group"><label>Tax ID / National ID</label><input type="text" placeholder="Tax / ID number" id="fTaxNo"/></div>
+                                </div>
+                                <div class="form-group"><label>Address *</label><textarea rows="2" placeholder="Billing address" id="fAddress"></textarea></div>
+                                <div class="form-row">
+                                    <div class="form-group"><label>City *</label>
+                                        <select id="fCity">
+                                            <option value="">Select</option>
+                                            <option>Istanbul</option><option>Ankara</option><option>Izmir</option>
+                                            <option>Bursa</option><option>Antalya</option><option>Adana</option>
+                                            <option>Konya</option><option>Gaziantep</option><option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group"><label>Postal Code</label><input type="text" placeholder="34000" id="fZip"/></div>
+                                </div>
+                            </div>
+
+                            <div class="form-card">
+                                <div class="form-card-title">💳 Payment Method</div>
+                                <div class="payment-tabs">
+                                    <button class="payment-tab active" onclick="selectTab(this,'card')">Credit / Debit Card</button>
+                                    <button class="payment-tab" onclick="selectTab(this,'wire')">Bank Transfer</button>
+                                </div>
+
+                                <div id="tabCard">
+                                    <div class="form-group">
+                                        <label>Name on Card *</label>
+                                        <input type="text" placeholder="FULL NAME" id="cName"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Card Number *</label>
+                                        <div class="card-input-wrap">
+                                            <input type="text" placeholder="0000 0000 0000 0000" id="cNum" maxlength="19" oninput="formatCard(this)"/>
+                                            <div class="card-icons">
+                                                <svg width="36" height="22" viewBox="0 0 44 28"><rect width="44" height="28" rx="4" fill="#1A1F71"/><text x="22" y="19" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="11" fill="#fff">VISA</text></svg>
+                                                <svg width="36" height="22" viewBox="0 0 44 28"><rect width="44" height="28" rx="4" fill="#f0f0f0"/><circle cx="17" cy="14" r="8" fill="#EB001B"/><circle cx="27" cy="14" r="8" fill="#F79E1B"/><path d="M22 7.5a8 8 0 0 1 0 13A8 8 0 0 1 22 7.5z" fill="#FF5F00"/></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group"><label>Expiry Date *</label><input type="text" placeholder="MM / YY" id="cExp" maxlength="7" oninput="formatExp(this)"/></div>
+                                        <div class="form-group"><label>CVV *</label><input type="text" placeholder="•••" id="cCvv" maxlength="4"/></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Installments</label>
+                                        <select id="cInstall">
+                                            <option value="1">Single Payment</option>
+                                            <option value="2">2 Installments</option>
+                                            <option value="3">3 Installments</option>
+                                            <option value="6">6 Installments</option>
+                                            <option value="9">9 Installments</option>
+                                            <option value="12">12 Installments</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div id="tabWire" style="display:none;">
+                                    <div style="background:#f9f9f9;padding:20px;border-radius:4px;font-family:'Muli',sans-serif;font-size:.9em;line-height:2;color:#444;">
+                                        <strong style="font-family:'Montserrat',sans-serif;font-size:.85em;display:block;margin-bottom:10px;">Bank Account Details</strong>
+                                        Bank: <strong>Garanti BBVA</strong><br>
+                                        Account Name: <strong>Inovaktif Technology Inc.</strong><br>
+                                        IBAN: <strong>TR00 0006 2000 0000 0000 0000 00</strong><br>
+                                        Reference: <strong>Please include your order number</strong>
+                                    </div>
+                                    <p style="font-family:'Muli',sans-serif;font-size:.82em;color:#999;margin-top:14px;">After completing your bank transfer, please send the receipt to info@inovaktif.com. Your service will be activated once payment is verified.</p>
+                                </div>
+                            </div>
+
+                            <div class="form-card">
+                                <div class="form-card-title">📄 Agreements</div>
+                                <div class="agreement-check">
+                                    <input type="checkbox" id="chkMesafeli"/>
+                                    <label for="chkMesafeli">I have read and accept the <a href="distance-sales-agreement.html" target="_blank">Distance Sales Agreement</a>. *</label>
+                                </div>
+                                <div class="agreement-check">
+                                    <input type="checkbox" id="chkIptal"/>
+                                    <label for="chkIptal">I have read and accept the <a href="cancellation-refund.html" target="_blank">Cancellation &amp; Refund Policy</a>. *</label>
+                                </div>
+                                <div class="agreement-check">
+                                    <input type="checkbox" id="chkKvkk"/>
+                                    <label for="chkKvkk">I have read and approve the <a href="cookie-policy.html" target="_blank">Privacy Notice</a> regarding the processing of my personal data. *</label>
+                                </div>
+                                <button class="btn-pay" onclick="doPayment()">🔒 Complete Payment</button>
+                            </div>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="order-summary" id="orderSummary">
+                            <div class="order-title">Order Summary</div>
+                            <div id="orderItems"></div>
+                            <div class="order-totals" id="orderTotals"></div>
+                            <div class="secure-badges">
+                                <div data-ino-payment-banner></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="ef-footer" class="clearfix">
+            <div id="ef-footer-inner" class="text-center">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <ul id="ef-social-bar" class="list-inline">
+                            <li><a class="icon-ef-linkedin" target="_blank" href="https://www.linkedin.com/company/577682" title="LinkedIn"></a></li>
+                            <li><a class="icon-ef-mail" target="_blank" href="contact.html" title="Send Mail"></a></li>
+                        </ul>
+                        <div data-ino-shop-footer></div>
+                        <p>&copy; 2024 Inovaktif - <a href="https://tanfer.group/" target="_blank">a Tanfer Group Company</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+
+<!-- iyzico Modal -->
+<div class="modal-overlay" id="payModal">
+    <div class="modal-box">
+        <button class="modal-x" onclick="closeModal()">✕</button>
+        <div class="modal-icon">🔧</div>
+        <div class="modal-title">Payments Currently Unavailable</div>
+        <div class="modal-text">
+            We are currently unable to accept payments as our <strong>iyzico</strong> membership process is still in progress.<br><br>
+            To complete your order, please contact us or use <strong>bank transfer</strong>.<br><br>
+            📧 <strong>info@inovaktif.com</strong><br>
+            📞 <strong>+90 212 258 80 34</strong>
+        </div>
+        <button class="modal-close" onclick="closeModal()">OK, Got It</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/foundation.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="assets/js/smartresize.min.js"></script>
+<script type="text/javascript" src="assets/js/shadowbox/shadowbox.js"></script>
+<script type="text/javascript" src="assets/js/ef-vars.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/cart.js"></script>
+<script type="text/javascript" src="assets/js/shop-ui.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    var items = InoCart.getCartItems();
+    if(items.length === 0){ window.location.href = 'cart.html'; return; }
+    var total = InoCart.getCartTotal();
+    var kdv = Math.round(total * 0.18);
+    var genel = total + kdv;
+
+    document.getElementById('orderItems').innerHTML = items.map(function(item){
+        return '<div class="order-item">'+
+            '<img src="'+item.image+'" alt="'+item.name+'"/>'+
+            '<div class="order-item-info">'+
+            '<div class="order-item-name">'+item.name+'</div>'+
+            '<div class="order-item-cat">'+item.category+' × '+item.qty+'</div>'+
+            '</div>'+
+            '<div class="order-item-price">'+InoCart.formatPrice(item.total)+'</div>'+
+            '</div>';
+    }).join('');
+
+    document.getElementById('orderTotals').innerHTML =
+        '<div class="row-line">Subtotal <span>'+InoCart.formatPrice(total)+'</span></div>'+
+        '<div class="row-line">VAT (18%) <span>'+InoCart.formatPrice(kdv)+'</span></div>'+
+        '<div class="row-total">Grand Total <span>'+InoCart.formatPrice(genel)+'</span></div>';
+});
+
+function selectTab(btn, tab) {
+    document.querySelectorAll('.payment-tab').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById('tabCard').style.display = tab === 'card' ? 'block' : 'none';
+    document.getElementById('tabWire').style.display = tab === 'wire' ? 'block' : 'none';
+}
+
+function formatCard(input) {
+    var v = input.value.replace(/\D/g,'').substring(0,16);
+    input.value = v.replace(/(.{4})/g,'$1 ').trim();
+}
+
+function formatExp(input) {
+    var v = input.value.replace(/\D/g,'');
+    if(v.length >= 2) v = v.substring(0,2) + ' / ' + v.substring(2,4);
+    input.value = v;
+}
+
+function doPayment() {
+    var chkM = document.getElementById('chkMesafeli').checked;
+    var chkI = document.getElementById('chkIptal').checked;
+    var chkK = document.getElementById('chkKvkk').checked;
+    var name = document.getElementById('fName').value.trim();
+    var email = document.getElementById('fEmail').value.trim();
+    if(!name || !email) { alert('Please fill in your first name and email.'); return; }
+    if(!chkM || !chkI || !chkK) { alert('Please read and accept all agreements.'); return; }
+    document.getElementById('payModal').classList.add('open');
+}
+
+function closeModal() {
+    document.getElementById('payModal').classList.remove('open');
+}
+
+document.getElementById('payModal').addEventListener('click', function(e){
+    if(e.target === this) closeModal();
+});
+</script>
+</body>
+</html>

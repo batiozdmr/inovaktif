@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js ino-shop">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>My Cart | Inovaktif Technologies</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/new_IM3.png"/>
+    <script>
+        if (typeof WebFontConfig === "undefined") { WebFontConfig = new Object(); }
+        WebFontConfig['google'] = {families: ['Montserrat:400,700', 'Muli:300,400,300italic,400italic']};
+        (function () { var wf = document.createElement('script'); wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js'; wf.type = 'text/javascript'; wf.async = 'true'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wf, s); })();
+    </script>
+    <link rel='stylesheet' href='assets/js/vendor/jquery-ui/jquery-ui.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/shortcodes.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/bootstrap.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/topbar.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/fontello/css/fontello.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/fontello/css/animation.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/fonts/taras-font/css/styles.min.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/style.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/colors.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/brama-custom.css' type='text/css' media='screen'/>
+    <link rel='stylesheet' href='assets/css/shadowbox.min.css' type='text/css' media='screen'/>
+    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery-migrate.min.js"></script>
+    <style>
+        .cart-section { padding: 60px 0; background: #f9f9f9; min-height: 60vh; }
+        .cart-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .cart-layout { display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: start; }
+        @media(max-width:900px){ .cart-layout { grid-template-columns: 1fr; } }
+        .cart-title { font-family: 'Montserrat', sans-serif; font-size: 1.4em; font-weight: 700; margin-bottom: 24px; letter-spacing: 1px; }
+        .cart-table { width: 100%; background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 15px rgba(0,0,0,.06); }
+        .cart-table th { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; padding: 16px 20px; border-bottom: 2px solid #f0f0f0; text-align: left; }
+        .cart-row { border-bottom: 1px solid #f5f5f5; transition: background .15s; }
+        .cart-row:hover { background: #fafafa; }
+        .cart-row td { padding: 20px; vertical-align: middle; }
+        .cart-item-img { width: 70px; height: 50px; object-fit: cover; border-radius: 3px; }
+        .cart-item-name { font-family: 'Montserrat', sans-serif; font-size: .9em; font-weight: 700; color: #222; display: block; margin-bottom: 4px; }
+        .cart-item-cat { font-family: 'Muli', sans-serif; font-size: .8em; color: #999; }
+        .qty-cell { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 2px; overflow: hidden; width: fit-content; }
+        .qty-cell button { background: #f5f5f5; border: none; padding: 6px 12px; cursor: pointer; font-size: 14px; font-weight: 700; color: #333; }
+        .qty-cell button:hover { background: #e0e0e0; }
+        .qty-cell span { padding: 6px 14px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; min-width: 36px; text-align: center; }
+        .item-price { font-family: 'Montserrat', sans-serif; font-size: .95em; font-weight: 700; color: #222; white-space: nowrap; }
+        .remove-btn { background: none; border: none; color: #ccc; cursor: pointer; font-size: 18px; padding: 4px 8px; transition: color .2s; }
+        .remove-btn:hover { color: #e74c3c; }
+        .cart-empty { text-align: center; padding: 60px 20px; background: #fff; border-radius: 4px; box-shadow: 0 2px 15px rgba(0,0,0,.06); }
+        .cart-empty p { font-family: 'Muli', sans-serif; color: #999; margin-bottom: 24px; }
+        .cart-empty a { display: inline-block; padding: 12px 30px; background: #222; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; }
+        .cart-summary { background: #fff; border-radius: 4px; box-shadow: 0 2px 15px rgba(0,0,0,.06); padding: 30px; position: sticky; top: 20px; }
+        .summary-title { font-family: 'Montserrat', sans-serif; font-size: 1.1em; font-weight: 700; margin-bottom: 24px; }
+        .summary-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-family: 'Muli', sans-serif; font-size: .9em; color: #555; }
+        .summary-row.total { border-bottom: none; padding-top: 16px; font-family: 'Montserrat', sans-serif; font-size: 1.1em; font-weight: 700; color: #222; }
+        .summary-row span { font-weight: 700; color: #222; }
+        .btn-checkout { display: block; width: 100%; padding: 15px; background: #222; color: #fff; border: none; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; margin-top: 20px; text-align: center; text-decoration: none; transition: background .2s; }
+        .btn-checkout:hover { background: #444; color: #fff; text-decoration: none; }
+        .btn-continue { display: block; width: 100%; padding: 12px; background: transparent; color: #333; border: 2px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; margin-top: 10px; text-align: center; text-decoration: none; transition: all .2s; }
+        .btn-continue:hover { border-color: #333; text-decoration: none; color: #333; }
+        .secure-note { text-align: center; margin-top: 16px; font-family: 'Muli', sans-serif; font-size: .8em; color: #999; }
+        .payment-logos { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+    </style>
+</head>
+<div id="ef-loading-overlay"></div>
+<div id="ef-tpl-wrapper">
+    <header id="ef-header" class="ef-positioner">
+        <div id="ef-site-name">
+            <div class="navbar-brand">
+                <a id="ef-logo" href="index.html" title="Inovaktif Technologies">
+                    <img class="ef-default-logo" src="assets/images/new_IM3.png" alt="Inovaktif Technologies"/>
+                    <img class="ef-white-logo" src="assets/images/new_IM3_bw-1.png" alt="Inovaktif Technologies"/>
+                </a>
+            </div>
+            <div id="ef-controls-bar"><a href="#" id="ef-toggle-menu"><span></span></a></div>
+        </div>
+        <div id="ef-site-nav">
+            <div id="ef-site-nav-inner">
+                <a class="ef-default-logo1" href="index.html"><img src="assets/images/new_IM3.png" alt=""/></a>
+                <div id="ef-brand"><h1>Inovaktif Technologies</h1><em class="ef-fancy">Creative Digital Solutions</em></div>
+                <div class="row">
+                    <div class="col-lg-6 clearfix">
+                        <nav class="top-bar" data-topbar data-options="mobile_show_parent_link: true">
+                            <ul class="title-area"><li class="name"></li><li class="toggle-topbar menu-icon"><a href="#">Menu</a></li></ul>
+                            <section class="top-bar-section">
+                                <ul id="menu-menu-1" class="top-bar-menu left">
+                                    <li class="menu-item menu-item-has-children has-dropdown"><a href="index.html">Inovaktif</a>
+                                        <ul class="sub-menu dropdown">
+                                            <li><a href="information-security-policy.html">Information Security Policy</a></li>
+                                            <li><a href="cookie-policy.html">Inovaktif Cookie Policy</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item"><a href="investments.html">Investments</a></li>
+                                    <li class="menu-item"><a href="solutions.html">Solutions</a></li>
+                                    <li class="menu-item"><a href="products.html">Products</a></li>
+                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                                    <li class="menu-item active"><a href="cart.html">Cart <span class="cart-badge" style="display:none;background:#e74c3c;color:#fff;border-radius:50%;padding:1px 5px;font-size:10px;">0</span></a></li>
+                                </ul>
+                            </section>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6">
+                        <aside id="ef-menu-widgets"><div class="row"><section class="ef-widget widget_block widget_text col-lg-3 col-md-6"><div class="widget"><p><strong>About Us</strong><br>Inovaktif specializes in helping corporations and consumers use software as a service tools.</p></div></section></div></aside>
+                    </div>
+                </div>
+            </div>
+            <ul id="ef-controls"><li id="ef-toggle-share"><span class="ts-icon-share"></span><ul class="ef-share-buttons"><li><a title="LinkedIn" class="icon-ef-linkedin" href="https://www.linkedin.com/company/577682" target="_blank"></a></li></ul></li></ul>
+        </div>
+        <div id="ef-loader"><div class="ef-loader-1"></div><div class="ef-loader-2"></div></div>
+        <div id="ef-header-inner" class="text-center">
+            <div id="ef-welcome-block">
+                <h1 id="ef-main-title">My Cart</h1>
+                <div class="clear"></div>
+                <div id="ef-main-description">Review your selected services and complete your order</div>
+            </div>
+        </div>
+        <div id="ef-header-angle" class="clearfix"><span class="ef-header-angle"></span><a id="ef-to-content" href="#"></a></div>
+    </header>
+
+    <section id="ef-content">
+        <main class="clearfix">
+            <div class="cart-section">
+                <div class="cart-container">
+                    <div id="cartContent"></div>
+                </div>
+            </div>
+        </main>
+        <footer id="ef-footer" class="clearfix">
+            <div id="ef-footer-inner" class="text-center">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <ul id="ef-social-bar" class="list-inline">
+                            <li><a class="icon-ef-linkedin" target="_blank" href="https://www.linkedin.com/company/577682" title="LinkedIn"></a></li>
+                            <li><a class="icon-ef-mail" target="_blank" href="contact.html" title="Send Mail"></a></li>
+                        </ul>
+                        <div data-ino-shop-footer></div>
+                        <p>&copy; 2024 Inovaktif - <a href="https://tanfer.group/" target="_blank">a Tanfer Group Company</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/foundation.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="assets/js/smartresize.min.js"></script>
+<script type="text/javascript" src="assets/js/shadowbox/shadowbox.js"></script>
+<script type="text/javascript" src="assets/js/ef-vars.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/cart.js"></script>
+<script type="text/javascript" src="assets/js/shop-ui.js"></script>
+<script>
+function renderCart() {
+    var items = InoCart.getCartItems();
+    var cont = document.getElementById('cartContent');
+    if (items.length === 0) {
+        cont.innerHTML = '<div class="cart-empty"><div style="font-size:3em;margin-bottom:16px;">🛒</div><h3 style="font-family:Montserrat,sans-serif;margin-bottom:12px;">Your cart is empty</h3><p>You haven\'t added any products yet.</p><a href="products.html">Start Shopping</a></div>';
+        return;
+    }
+    var total = InoCart.getCartTotal();
+    var kdv = Math.round(total * 0.18);
+    var genel = total + kdv;
+    var rows = items.map(function(item){
+        return '<tr class="cart-row">'+
+            '<td><img class="cart-item-img" src="'+item.image+'" alt="'+item.name+'"/></td>'+
+            '<td><span class="cart-item-name">'+item.name+'</span><span class="cart-item-cat">'+item.category+'</span></td>'+
+            '<td><div class="qty-cell">'+
+            '<button onclick="changeQty('+item.id+',-1)">−</button>'+
+            '<span>'+item.qty+'</span>'+
+            '<button onclick="changeQty('+item.id+',1)">+</button>'+
+            '</div></td>'+
+            '<td class="item-price">'+InoCart.formatPrice(item.price)+'</td>'+
+            '<td class="item-price">'+InoCart.formatPrice(item.total)+'</td>'+
+            '<td><button class="remove-btn" onclick="removeItem('+item.id+')" title="Remove">✕</button></td>'+
+            '</tr>';
+    }).join('');
+
+    cont.innerHTML = '<div class="cart-layout">'+
+        '<div>'+
+        '<div class="cart-title">Cart ('+ items.length +' items)</div>'+
+        '<table class="cart-table">'+
+        '<thead><tr><th></th><th>Product</th><th>Qty</th><th>Unit Price</th><th>Total</th><th></th></tr></thead>'+
+        '<tbody>'+rows+'</tbody>'+
+        '</table>'+
+        '<div style="margin-top:20px;"><a href="products.html" style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;color:#333;">← Continue Shopping</a></div>'+
+        '</div>'+
+        '<div class="cart-summary">'+
+        '<div class="summary-title">Order Summary</div>'+
+        '<div class="summary-row">Subtotal <span>'+InoCart.formatPrice(total)+'</span></div>'+
+        '<div class="summary-row">VAT (18%) <span>'+InoCart.formatPrice(kdv)+'</span></div>'+
+        '<div class="summary-row total">Grand Total <span>'+InoCart.formatPrice(genel)+'</span></div>'+
+        '<a href="checkout.html" class="btn-checkout">Proceed to Checkout →</a>'+
+        '<a href="products.html" class="btn-continue">Continue Shopping</a>'+
+        '<div class="secure-note">🔒 Secure checkout with 256-bit SSL</div>'+
+        '<div class="payment-logos" data-ino-payment-banner></div>'+
+        '</div>'+
+        '</div>';
+}
+
+function changeQty(id, d) {
+    var items = InoCart.getCartItems();
+    var item = items.find(function(i){ return i.id === id; });
+    if (item) { InoCart.updateQty(id, item.qty + d); renderCart(); }
+}
+
+function removeItem(id) {
+    InoCart.removeItem(id);
+    renderCart();
+}
+
+function initCartPage() {
+    renderCart();
+    document.querySelectorAll('[data-ino-payment-banner]').forEach(function (el) {
+        el.innerHTML = InoShopUI.paymentBannerHtml();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initCartPage);
+</script>
+</body>
+</html>
