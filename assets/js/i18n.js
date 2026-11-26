@@ -172,9 +172,7 @@ var InoI18n = (function () {
         'privacy-policy.html': 'nav.privacy',
         'investments.html': 'nav.investments',
         'solutions.html': 'nav.solutions',
-        'products.html': 'nav.products',
-        'contact.html': 'nav.contact',
-        'cart.html': 'nav.cart'
+        'contact.html': 'nav.contact'
     };
 
     var H1 = {
@@ -278,38 +276,15 @@ var InoI18n = (function () {
         cookie.parentElement.insertAdjacentElement('afterend', li);
     }
 
-    function ensureShopLinks() {
-        var menu = document.getElementById('menu-menu-1');
-        if (!menu) return;
-        var sample = menu.querySelector('a[href$="contact.html"]') || menu.querySelector('a[href$="solutions.html"]');
-        if (!sample) return;
-        var prefix = prefixFrom(sample.getAttribute('href'));
-        var contactLi = sample.closest('li');
-        if (!menu.querySelector('a[href$="products.html"]')) {
-            var products = document.createElement('li');
-            products.className = 'menu-item';
-            products.innerHTML = '<a href="' + prefix + 'products.html"></a>';
-            if (contactLi && contactLi.parentElement === menu) menu.insertBefore(products, contactLi);
-            else menu.appendChild(products);
-        }
-        if (!menu.querySelector('a[href$="cart.html"]')) {
-            var cart = document.createElement('li');
-            cart.className = 'menu-item';
-            cart.innerHTML = '<a href="' + prefix + 'cart.html">Cart <span class="cart-badge">0</span></a>';
-            menu.appendChild(cart);
-        }
-    }
-
-    function refreshCartBadge() {
-        var count = 0;
-        try {
-            JSON.parse(localStorage.getItem('inovaktif_cart') || '[]').forEach(function (item) {
-                count += item.qty || 0;
-            });
-        } catch (e) {}
-        document.querySelectorAll('.cart-badge').forEach(function (badge) {
-            badge.textContent = String(count);
-            badge.style.display = count > 0 ? 'inline-flex' : 'none';
+    function removeShopLinks() {
+        document.querySelectorAll(
+            '#menu-menu-1 a[href*="products.html"], #menu-menu-1 a[href*="cart.html"], #menu-menu-1 a[href*="checkout.html"], #menu-menu-1 a[href*="product-detail.html"]'
+        ).forEach(function (a) {
+            var li = a.closest('li');
+            if (li) li.parentNode.removeChild(li);
+        });
+        document.querySelectorAll('.cart-float, .nav-cart-link, [data-ino-shop-footer], .ino-payment-badges, .ino-legal-links').forEach(function (el) {
+            if (el.parentNode) el.parentNode.removeChild(el);
         });
     }
 
@@ -612,12 +587,14 @@ var InoI18n = (function () {
         document.documentElement.lang = lang();
         ensureSwitcher();
         ensurePrivacyLink();
+        removeShopLinks();
         ensureFooter();
         markActive();
         applyKeyed();
         applyKnown();
         applyNav();
         applyPhrases();
+        removeShopLinks();
         refreshSlideCaption();
         document.dispatchEvent(new CustomEvent('ino-lang'));
     }
