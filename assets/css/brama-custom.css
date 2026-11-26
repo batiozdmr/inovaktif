@@ -56,11 +56,20 @@
 }
 
 .ef-home-default .slide_desc, html.no-js .ef-home-default .html-desc {
-    left: 140px;
+    left: 48px;
 }
 #ef-header-inner, #ef-content, #ef-site-nav-inner {
-    padding-left: 140px;
-    padding-right: 140px;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+@media (min-width: 1200px) {
+    .ef-home-default .slide_desc, html.no-js .ef-home-default .html-desc {
+        left: 140px;
+    }
+    #ef-header-inner, #ef-content, #ef-site-nav-inner {
+        padding-left: 140px;
+        padding-right: 140px;
+    }
 }
 
 a,
@@ -278,21 +287,9 @@ blockquote, q, #ef-main-description em, .ef-fancy {
 
 /* Custom CSS */
 
-#ef-header-inner {
-    min-height: 100vh !important;
-    height: auto !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
-
-html.js #ef-welcome-block,
 html.ino-shop #ef-welcome-block {
     top: auto !important;
     -webkit-transform: none !important;
-    -moz-transform: none !important;
-    -ms-transform: none !important;
-    -o-transform: none !important;
     transform: none !important;
     position: relative !important;
 }
@@ -301,7 +298,8 @@ html.ino-shop #ef-welcome-block {
 html.ino-shop #ef-header-inner {
     min-height: 0 !important;
     height: auto !important;
-    padding: 88px 140px 20px !important;
+    padding-top: 88px !important;
+    padding-bottom: 28px !important;
 }
 
 html.ino-shop #ef-welcome-block #ef-main-title {
@@ -320,6 +318,9 @@ html.ino-shop #ef-welcome-block #ef-main-description {
 html.ino-shop #ef-header-angle {
     height: 48px;
 }
+html.ino-shop #ef-to-content {
+    display: none;
+}
 
 html.ino-shop .ef-header-angle {
     border-bottom-width: 48px;
@@ -329,5 +330,277 @@ html.ino-shop .ef-header-angle {
     html.ino-shop #ef-header-inner {
         padding: 80px 20px 16px !important;
     }
+}
+
+/* Layout repairs */
+html, body {
+    overflow-x: hidden;
+}
+.ef-home-default #ef-welcome-block #ef-main-title,
+.ef-home-default #ef-welcome-block #ef-main-description,
+.ef-home-default #ef-welcome-block #ef-main-description em,
+.ef-home-default .slide_desc,
+.ef-home-default .slide_desc h2,
+.ef-home-default .slide_desc p,
+.ef-home-default .slide_desc a {
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, .45);
+}
+.ef-home-default #ef-welcome-block #ef-main-description {
+    max-width: 14em;
+    line-height: 1.15;
+}
+.ef-home-default #ef-toggle-menu > span,
+.ef-home-default #ef-toggle-menu > span:before,
+.ef-home-default #ef-toggle-menu > span:after {
+    border-color: #fff;
+}
+.slide_desc, html.no-js .html-desc {
+    max-width: min(520px, calc(100vw - 80px));
+    z-index: 20;
+}
+.slide_desc > p, html.no-js .html-desc > p,
+.ef-home-default .slide_desc > p {
+    width: auto;
+    max-width: 100%;
+}
+
+#ef-wpml-lang-switcher {
+    position: fixed;
+    top: 46px;
+    right: 78px;
+    z-index: 400;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: rgba(255, 255, 255, .92);
+    border-radius: 3px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .15);
+}
+#ef-wpml-lang-switcher a {
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+#ef-wpml-lang-switcher > li.ef-active-lang > a {
+    opacity: 1;
+}
+#ef-wpml-lang-switcher > li:not(.ef-active-lang) > a {
+    opacity: .45;
+}
+.ef-home-default #ef-wpml-lang-switcher,
+.ef-dark-adjustor.ef-home-default #ef-wpml-lang-switcher {
+    background: rgba(0, 0, 0, .38);
+    box-shadow: none;
+}
+.ef-home-default #ef-wpml-lang-switcher a,
+.ef-dark-adjustor.ef-home-default #ef-wpml-lang-switcher a {
+    color: #fff;
+}
+.ino-footer-legal {
+    margin-top: 14px;
+}
+.ino-footer-legal a {
+    color: #aaa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin: 0 8px;
+    text-decoration: none;
+}
+.ino-footer-legal a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.cart-badge, .nav-cart-badge {
+    display: none;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 18px;
+    vertical-align: middle;
+}
+html:not([lang="tr"]) [data-lang="tr"] { display: none !important; }
+html[lang="tr"] [data-lang="en"] { display: none !important; }
+
+.legal-entity {
+    background: #f4f7fb;
+    border-left: 4px solid #1E73BE;
+    padding: 18px 20px;
+    margin: 0 0 28px;
+    font-family: 'Muli', sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+.legal-entity strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .4px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+/* Refinement: same layout, tighter type and surfaces */
+body:not(.ef-home-default) #ef-welcome-block #ef-main-title,
+body:not(.ef-home-default) #ef-welcome-block #ef-main-description {
+    letter-spacing: -0.025em;
+}
+body:not(.ef-home-default) #ef-to-content {
+    display: none;
+}
+#ef-content .entry-content {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #2a2a2a;
+}
+#ef-content .entry-content p {
+    margin-bottom: 0.9em;
+}
+#ef-content .entry-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 28px;
+    font-size: 14px;
+    line-height: 1.55;
+}
+#ef-content .entry-content td {
+    border-bottom: 1px solid #ececec;
+    padding: 12px 10px;
+    vertical-align: top;
+}
+#ef-content .entry-content tr:first-child td {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: #111;
+    border-bottom-color: #111;
+}
+#ef-project-details header {
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #888;
+}
+#ef-portfolio .ef-item img,
+.cbp-item img {
+    border-radius: 8px;
+}
+#ef-footer-inner {
+    letter-spacing: .01em;
+}
+html.ino-shop .form-card,
+html.ino-shop .order-summary,
+html.ino-shop .cart-table,
+html.ino-shop .summary-card {
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(16, 24, 40, .05);
+}
+html.ino-shop input,
+html.ino-shop textarea,
+html.ino-shop select {
+    border-radius: 8px;
+}
+html.ino-shop .btn-pay,
+html.ino-shop .btn-add-main,
+html.ino-shop .btn-checkout {
+    border-radius: 999px;
+    letter-spacing: .08em;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid #1c1c1c;
+    outline-offset: 3px;
+}
+
+#ef-portfolio .ef-proj-img {
+    border-radius: 10px;
+    overflow: hidden;
+}
+#ef-portfolio .ef-proj-desc {
+    background: linear-gradient(to top, rgba(8, 12, 20, .78) 0%, rgba(8, 12, 20, 0) 58%);
+}
+#ef-portfolio .ef-proj-desc:before {
+    display: none !important;
+}
+#ef-portfolio .ef-proj-desc .ef-details-holder {
+    top: auto !important;
+    bottom: 16px;
+    transform: none !important;
+    padding: 0 22px !important;
+    text-align: left;
+    font-size: .62em;
+    letter-spacing: .04em;
+    line-height: 1.35;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
+}
+#ef-portfolio .ef-proj-desc > a,
+#ef-portfolio .ef-post:hover .ef-proj-desc > a {
+    color: #fff !important;
+}
+#ef-portfolio-filter {
+    margin-bottom: 28px;
+}
+#ef-portfolio-filter a {
+    font-size: 13px !important;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+#ef-portfolio-filter a > span,
+#ef-portfolio-filter a:hover > span,
+#ef-portfolio-filter li:first-child a > span {
+    position: static !important;
+    display: inline !important;
+    color: #8a8a8a !important;
+    font-size: 12px !important;
+    margin-left: 8px;
+    border: 0 !important;
+    font-weight: 600;
+}
+
+#ef-project-details {
+    margin-top: 8px;
+}
+#ef-project-details .row {
+    border-bottom: 1px solid #ececec;
+    padding: 12px 0;
+    margin: 0;
+}
+#ef-project-details header {
+    margin: 0;
+}
+#ef-project-details p {
+    margin: 0;
+}
+#ef-post-nav h6 {
+    display: inline;
+    font-size: 15px;
+    letter-spacing: 0;
+}
+#ef-post-nav a {
+    color: #161616;
+    border-bottom: 1px solid #161616;
+    text-decoration: none;
+}
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+#ef-content {
+    overflow-x: auto;
 }
 

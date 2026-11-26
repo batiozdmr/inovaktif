@@ -2,6 +2,7 @@
 <html lang="en" class="no-js ino-shop">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 <head>
+    <script>try{var l=localStorage.getItem("ino_lang");if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.lang=l;}catch(e){}</script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta name="description" content="Inovaktif Technologies - Boxing Equipment &amp; Gear">
@@ -40,13 +41,13 @@
         .shop-section { padding: 60px 0; background: #f9f9f9; }
         .shop-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .shop-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; justify-content: center; }
-        .filter-btn { padding: 8px 20px; border: 2px solid #333; background: transparent; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: all .25s; border-radius: 2px; }
-        .filter-btn:hover, .filter-btn.active { background: #333; color: #fff; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        .product-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 15px rgba(0,0,0,.08); transition: transform .25s, box-shadow .25s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,.15); }
-        .product-img { position: relative; overflow: hidden; height: 220px; }
-        .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+        .filter-btn { padding: 9px 18px; border: 1px solid #1c1c1c; background: #fff; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; transition: background .2s, color .2s, border-color .2s; border-radius: 999px; }
+        .filter-btn:hover, .filter-btn.active { background: #1c1c1c; color: #fff; border-color: #1c1c1c; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
+        .product-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #ececec; box-shadow: 0 10px 28px rgba(16, 24, 40, .05); transition: transform .25s, box-shadow .25s; }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(16, 24, 40, .1); }
+        .product-img { position: relative; overflow: hidden; height: 220px; background: #f4f4f4; }
+        .product-img img { width: 100%; height: 100%; object-fit: contain; transition: transform .4s; }
         .product-card:hover .product-img img { transform: scale(1.05); }
         .product-badge { position: absolute; top: 14px; left: 14px; background: #e74c3c; color: #fff; padding: 4px 12px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 2px; }
         .product-badge.green { background: #27ae60; }
@@ -60,7 +61,7 @@
         .product-price small { font-size: .55em; font-weight: 400; color: #999; display: block; }
         .btn-detail { padding: 9px 16px; border: 2px solid #333; background: transparent; color: #333; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .25s; text-decoration: none; }
         .btn-detail:hover { background: #333; color: #fff; }
-        .btn-cart { padding: 9px 16px; background: #333; color: #fff; border: 2px solid #333; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .25s; }
+        .btn-cart { padding: 10px 14px; background: #1c1c1c; color: #fff; border: 1px solid #1c1c1c; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border-radius: 999px; transition: background .2s; white-space: nowrap; }
         .btn-cart:hover { background: #555; border-color: #555; }
         .cart-float { position: fixed; bottom: 30px; left: 30px; background: #222; color: #fff; padding: 14px 24px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; text-decoration: none; z-index: 999; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,.3); transition: background .2s; }
         .cart-float:hover { background: #444; color: #fff; text-decoration: none; }
@@ -69,6 +70,7 @@
         .nav-cart-badge { background: #e74c3c; color: #fff; border-radius: 50%; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
     </style>
 </head>
+<body>
 
 <div id="ef-loading-overlay"></div>
 <div id="ef-tpl-wrapper">
@@ -140,9 +142,9 @@
         <div id="ef-loader"><div class="ef-loader-1"></div><div class="ef-loader-2"></div></div>
         <div id="ef-header-inner" class="text-center">
             <div id="ef-welcome-block">
-                <h1 id="ef-main-title">Boxing Products</h1>
+                <h1 id="ef-main-title" data-i18n="products.title">Boxing Products</h1>
                 <div class="clear"></div>
-                <div id="ef-main-description">Professional boxing gloves, bags, apparel and training gear</div>
+                <div id="ef-main-description" data-i18n="products.lead">Professional boxing gloves, bags, apparel and training gear</div>
             </div>
         </div>
         <div id="ef-header-angle" class="clearfix">
@@ -156,13 +158,13 @@
             <div class="shop-section">
                 <div class="shop-container">
                     <div class="shop-filters" id="shopFilters">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="Gloves">Gloves</button>
-                        <button class="filter-btn" data-filter="Bags">Bags</button>
-                        <button class="filter-btn" data-filter="Apparel">Apparel</button>
-                        <button class="filter-btn" data-filter="Protection">Protection</button>
-                        <button class="filter-btn" data-filter="Training">Training</button>
-                        <button class="filter-btn" data-filter="Kits">Kits</button>
+                        <button class="filter-btn active" data-filter="all" data-i18n="shop.all">All</button>
+                        <button class="filter-btn" data-filter="Gloves" data-i18n="shop.gloves">Gloves</button>
+                        <button class="filter-btn" data-filter="Bags" data-i18n="shop.bags">Bags</button>
+                        <button class="filter-btn" data-filter="Apparel" data-i18n="shop.apparel">Apparel</button>
+                        <button class="filter-btn" data-filter="Protection" data-i18n="shop.protection">Protection</button>
+                        <button class="filter-btn" data-filter="Training" data-i18n="shop.training">Training</button>
+                        <button class="filter-btn" data-filter="Kits" data-i18n="shop.kits">Kits</button>
                     </div>
                     <div class="products-grid" id="productsGrid"></div>
                 </div>
@@ -209,27 +211,30 @@ document.addEventListener('DOMContentLoaded', function () {
         var grid = document.getElementById('productsGrid');
         var filtered = filter === 'all' ? products : products.filter(function(p){ return p.category === filter; });
         var badgeColors = { 'Popular': '', 'Best Seller': 'blue', 'New': 'green', 'Essential': 'blue', 'Pro': '', 'Training': 'blue', 'Premium': '', 'Safety': 'green', 'Cardio': 'blue', 'Complete': 'blue' };
+        var tx = function (k) { return window.InoI18n ? InoI18n.t(k) : k; };
         grid.innerHTML = filtered.map(function(p){
+            var view = InoCart.localize(p);
             var bc = badgeColors[p.badge] || '';
             return '<div class="product-card" data-category="'+p.category+'">' +
                 '<div class="product-img">' +
-                '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy"/>' +
-                '<span class="product-badge '+bc+'">'+p.badge+'</span>' +
+                '<img src="'+p.image+'" alt="'+view.name+'" loading="lazy"/>' +
+                '<span class="product-badge '+bc+'">'+view.badge+'</span>' +
                 '</div>' +
                 '<div class="product-body">' +
-                '<div class="product-cat">'+p.category+'</div>' +
-                '<div class="product-name">'+p.name+'</div>' +
-                '<div class="product-desc">'+p.description+'</div>' +
+                '<div class="product-cat">'+view.category+'</div>' +
+                '<div class="product-name">'+view.name+'</div>' +
+                '<div class="product-desc">'+view.description+'</div>' +
                 '<div class="product-footer">' +
-                '<div class="product-price">'+InoCart.formatPrice(p.price)+'<small>+ VAT</small></div>' +
+                '<div class="product-price">'+InoCart.formatPrice(p.price)+'<small>'+tx('shop.vat')+'</small></div>' +
                 '<div style="display:flex;gap:8px;">' +
-                '<a href="product-detail.html?id='+p.id+'" class="btn-detail">Details</a>' +
-                '<button class="btn-cart" onclick="addToCart('+p.id+')">Add to Cart</button>' +
+                '<a href="product-detail.html?id='+p.id+'" class="btn-detail">'+tx('shop.details')+'</a>' +
+                '<button class="btn-cart" onclick="addToCart('+p.id+')">'+tx('shop.add')+'</button>' +
                 '</div></div></div></div>';
         }).join('');
     }
 
     renderProducts('all');
+    document.addEventListener('ino-lang', function () { renderProducts(currentFilter); });
 
     document.getElementById('shopFilters').addEventListener('click', function(e){
         if(e.target.classList.contains('filter-btn')){
@@ -253,5 +258,6 @@ function updateCartFloat() {
     if(fl) fl.style.display = count > 0 ? 'flex' : 'none';
 }
 </script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>

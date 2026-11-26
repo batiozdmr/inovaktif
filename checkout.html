@@ -2,6 +2,7 @@
 <html lang="en" class="no-js ino-shop">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 <head>
+    <script>try{var l=localStorage.getItem("ino_lang");if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.lang=l;}catch(e){}</script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>Checkout | Inovaktif Technologies</title>
@@ -89,6 +90,7 @@
         .modal-x:hover { color: #333; }
     </style>
 </head>
+<body>
 <div id="ef-loading-overlay"></div>
 <div id="ef-tpl-wrapper">
     <header id="ef-header" class="ef-positioner">
@@ -136,9 +138,9 @@
         <div id="ef-loader"><div class="ef-loader-1"></div><div class="ef-loader-2"></div></div>
         <div id="ef-header-inner" class="text-center">
             <div id="ef-welcome-block">
-                <h1 id="ef-main-title">Secure Checkout</h1>
+                <h1 id="ef-main-title" data-i18n="checkout.title">Secure Checkout</h1>
                 <div class="clear"></div>
-                <div id="ef-main-description">Enter your details and complete your order</div>
+                <div id="ef-main-description" data-i18n="checkout.lead">Enter your details and complete your order</div>
             </div>
         </div>
         <div id="ef-header-angle" class="clearfix"><span class="ef-header-angle"></span><a id="ef-to-content" href="#"></a></div>
@@ -150,59 +152,59 @@
                 <div class="checkout-container">
 
                     <div class="steps-bar">
-                        <div class="step done"><span class="step-num">✓</span> Cart</div>
+                        <div class="step done"><span class="step-num">✓</span> <span data-i18n="shop.stepCart">Cart</span></div>
                         <div class="step-line"></div>
-                        <div class="step active"><span class="step-num">2</span> Payment</div>
+                        <div class="step active"><span class="step-num">2</span> <span data-i18n="shop.stepPay">Payment</span></div>
                         <div class="step-line"></div>
-                        <div class="step"><span class="step-num">3</span> Confirmation</div>
+                        <div class="step"><span class="step-num">3</span> <span data-i18n="shop.stepDone">Confirmation</span></div>
                     </div>
 
                     <div class="checkout-layout">
                         <div>
                             <!-- Billing Information -->
                             <div class="form-card">
-                                <div class="form-card-title">📋 Billing / Contact Information</div>
+                                <div class="form-card-title">📋 <span data-i18n="shop.billing">Billing / Contact Information</span></div>
                                 <div class="form-row">
-                                    <div class="form-group"><label>First Name *</label><input type="text" placeholder="Your first name" id="fName"/></div>
-                                    <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Your last name" id="fLastname"/></div>
+                                    <div class="form-group"><label data-i18n="shop.first">First Name *</label><input type="text" data-i18n-placeholder="shop.phFirst" placeholder="Your first name" id="fName"/></div>
+                                    <div class="form-group"><label data-i18n="shop.last">Last Name *</label><input type="text" data-i18n-placeholder="shop.phLast" placeholder="Your last name" id="fLastname"/></div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group"><label>Email *</label><input type="email" placeholder="name@company.com" id="fEmail"/></div>
-                                    <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+90 5xx xxx xx xx" id="fPhone"/></div>
+                                    <div class="form-group"><label data-i18n="shop.email">Email *</label><input type="email" data-i18n-placeholder="shop.phEmail" placeholder="name@company.com" id="fEmail"/></div>
+                                    <div class="form-group"><label data-i18n="shop.phone">Phone *</label><input type="tel" data-i18n-placeholder="shop.phPhone" placeholder="+90 5xx xxx xx xx" id="fPhone"/></div>
                                 </div>
-                                <div class="form-group"><label>Company Name</label><input type="text" placeholder="Company name (optional)" id="fCompany"/></div>
+                                <div class="form-group"><label data-i18n="shop.company">Company Name</label><input type="text" data-i18n-placeholder="shop.phCompany" placeholder="Company name (optional)" id="fCompany"/></div>
                                 <div class="form-row">
-                                    <div class="form-group"><label>Tax Office</label><input type="text" placeholder="Tax office" id="fTaxOffice"/></div>
-                                    <div class="form-group"><label>Tax ID / National ID</label><input type="text" placeholder="Tax / ID number" id="fTaxNo"/></div>
+                                    <div class="form-group"><label data-i18n="shop.taxOffice">Tax Office</label><input type="text" data-i18n-placeholder="shop.phTaxOffice" placeholder="Tax office" id="fTaxOffice"/></div>
+                                    <div class="form-group"><label data-i18n="shop.taxId">Tax ID / National ID</label><input type="text" data-i18n-placeholder="shop.phTaxId" placeholder="Tax / ID number" id="fTaxNo"/></div>
                                 </div>
-                                <div class="form-group"><label>Address *</label><textarea rows="2" placeholder="Billing address" id="fAddress"></textarea></div>
+                                <div class="form-group"><label data-i18n="shop.address">Address *</label><textarea rows="2" data-i18n-placeholder="shop.phAddress" placeholder="Billing address" id="fAddress"></textarea></div>
                                 <div class="form-row">
-                                    <div class="form-group"><label>City *</label>
+                                    <div class="form-group"><label data-i18n="shop.city">City *</label>
                                         <select id="fCity">
-                                            <option value="">Select</option>
+                                            <option value="" data-i18n="shop.select">Select</option>
                                             <option>Istanbul</option><option>Ankara</option><option>Izmir</option>
                                             <option>Bursa</option><option>Antalya</option><option>Adana</option>
-                                            <option>Konya</option><option>Gaziantep</option><option>Other</option>
+                                            <option>Konya</option><option>Gaziantep</option><option data-i18n="shop.other">Other</option>
                                         </select>
                                     </div>
-                                    <div class="form-group"><label>Postal Code</label><input type="text" placeholder="34000" id="fZip"/></div>
+                                    <div class="form-group"><label data-i18n="shop.zip">Postal Code</label><input type="text" placeholder="34000" id="fZip"/></div>
                                 </div>
                             </div>
 
                             <div class="form-card">
-                                <div class="form-card-title">💳 Payment Method</div>
+                                <div class="form-card-title">💳 <span data-i18n="shop.payMethod">Payment Method</span></div>
                                 <div class="payment-tabs">
-                                    <button class="payment-tab active" onclick="selectTab(this,'card')">Credit / Debit Card</button>
-                                    <button class="payment-tab" onclick="selectTab(this,'wire')">Bank Transfer</button>
+                                    <button class="payment-tab active" onclick="selectTab(this,'card')" data-i18n="shop.card">Credit / Debit Card</button>
+                                    <button class="payment-tab" onclick="selectTab(this,'wire')" data-i18n="shop.wire">Bank Transfer</button>
                                 </div>
 
                                 <div id="tabCard">
                                     <div class="form-group">
-                                        <label>Name on Card *</label>
-                                        <input type="text" placeholder="FULL NAME" id="cName"/>
+                                        <label data-i18n="shop.cardName">Name on Card *</label>
+                                        <input type="text" data-i18n-placeholder="shop.phCardName" placeholder="FULL NAME" id="cName"/>
                                     </div>
                                     <div class="form-group">
-                                        <label>Card Number *</label>
+                                        <label data-i18n="shop.cardNo">Card Number *</label>
                                         <div class="card-input-wrap">
                                             <input type="text" placeholder="0000 0000 0000 0000" id="cNum" maxlength="19" oninput="formatCard(this)"/>
                                             <div class="card-icons">
@@ -212,55 +214,55 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group"><label>Expiry Date *</label><input type="text" placeholder="MM / YY" id="cExp" maxlength="7" oninput="formatExp(this)"/></div>
-                                        <div class="form-group"><label>CVV *</label><input type="text" placeholder="•••" id="cCvv" maxlength="4"/></div>
+                                        <div class="form-group"><label data-i18n="shop.exp">Expiry Date *</label><input type="text" placeholder="MM / YY" id="cExp" maxlength="7" oninput="formatExp(this)"/></div>
+                                        <div class="form-group"><label data-i18n="shop.cvv">CVV *</label><input type="text" placeholder="•••" id="cCvv" maxlength="4"/></div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Installments</label>
+                                        <label data-i18n="shop.install">Installments</label>
                                         <select id="cInstall">
-                                            <option value="1">Single Payment</option>
-                                            <option value="2">2 Installments</option>
-                                            <option value="3">3 Installments</option>
-                                            <option value="6">6 Installments</option>
-                                            <option value="9">9 Installments</option>
-                                            <option value="12">12 Installments</option>
+                                            <option value="1" data-i18n="shop.single">Single Payment</option>
+                                            <option value="2" data-i18n="shop.inst2">2 Installments</option>
+                                            <option value="3" data-i18n="shop.inst3">3 Installments</option>
+                                            <option value="6" data-i18n="shop.inst6">6 Installments</option>
+                                            <option value="9" data-i18n="shop.inst9">9 Installments</option>
+                                            <option value="12" data-i18n="shop.inst12">12 Installments</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div id="tabWire" style="display:none;">
                                     <div style="background:#f9f9f9;padding:20px;border-radius:4px;font-family:'Muli',sans-serif;font-size:.9em;line-height:2;color:#444;">
-                                        <strong style="font-family:'Montserrat',sans-serif;font-size:.85em;display:block;margin-bottom:10px;">Bank Account Details</strong>
-                                        Bank: <strong>Garanti BBVA</strong><br>
-                                        Account Name: <strong>Inovaktif Technology Inc.</strong><br>
+                                        <strong style="font-family:'Montserrat',sans-serif;font-size:.85em;display:block;margin-bottom:10px;" data-i18n="shop.bankTitle">Bank Account Details</strong>
+                                        <span data-i18n="shop.bank">Bank:</span> <strong>Garanti BBVA</strong><br>
+                                        <span data-i18n="shop.accountName">Account Name:</span> <strong>İnovaktif Medya Ticaret Limited Şirketi</strong><br>
                                         IBAN: <strong>TR00 0006 2000 0000 0000 0000 00</strong><br>
-                                        Reference: <strong>Please include your order number</strong>
+                                        <span data-i18n="shop.reference">Reference:</span> <strong data-i18n="shop.referenceNote">Please include your order number</strong>
                                     </div>
-                                    <p style="font-family:'Muli',sans-serif;font-size:.82em;color:#999;margin-top:14px;">After completing your bank transfer, please send the receipt to info@inovaktif.com. Your service will be activated once payment is verified.</p>
+                                    <p style="font-family:'Muli',sans-serif;font-size:.82em;color:#999;margin-top:14px;" data-i18n="shop.wireNote">After completing your bank transfer, please send the receipt to info@inovaktif.com. Your service will be activated once payment is verified.</p>
                                 </div>
                             </div>
 
                             <div class="form-card">
-                                <div class="form-card-title">📄 Agreements</div>
+                                <div class="form-card-title">📄 <span data-i18n="shop.agreements">Agreements</span></div>
                                 <div class="agreement-check">
                                     <input type="checkbox" id="chkMesafeli"/>
-                                    <label for="chkMesafeli"><a href="distance-sales-agreement.html" target="_blank">Mesafeli Satış Sözleşmesi</a>'ni okudum ve kabul ediyorum. *</label>
+                                    <label for="chkMesafeli" data-i18n-html="shop.acceptDistance">I have read and accept the <a href="distance-sales-agreement.html" target="_blank">Distance Sales Agreement</a>. *</label>
                                 </div>
                                 <div class="agreement-check">
                                     <input type="checkbox" id="chkIptal"/>
-                                    <label for="chkIptal"><a href="cancellation-refund.html" target="_blank">İptal ve İade Politikası</a>'nı okudum ve kabul ediyorum. *</label>
+                                    <label for="chkIptal" data-i18n-html="shop.acceptCancel">I have read and accept the <a href="cancellation-refund.html" target="_blank">Cancellation and Refund Policy</a>. *</label>
                                 </div>
                                 <div class="agreement-check">
                                     <input type="checkbox" id="chkKvkk"/>
-                                    <label for="chkKvkk">Kişisel verilerimin işlenmesine ilişkin <a href="cookie-policy.html" target="_blank">Aydınlatma Metni</a>'ni okudum ve onaylıyorum. *</label>
+                                    <label for="chkKvkk" data-i18n-html="shop.acceptPrivacy">I have read and accept the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> on the processing of my personal data. *</label>
                                 </div>
-                                <button class="btn-pay" onclick="doPayment()">🔒 Complete Payment</button>
+                                <button class="btn-pay" onclick="doPayment()">🔒 <span data-i18n="shop.payNow">Complete Payment</span></button>
                             </div>
                         </div>
 
                         <!-- Order Summary -->
                         <div class="order-summary" id="orderSummary">
-                            <div class="order-title">Order Summary</div>
+                            <div class="order-title" data-i18n="shop.summary">Order Summary</div>
                             <div id="orderItems"></div>
                             <div class="order-totals" id="orderTotals"></div>
                             <div class="secure-badges">
@@ -294,14 +296,14 @@
     <div class="modal-box">
         <button class="modal-x" onclick="closeModal()">✕</button>
         <div class="modal-icon">🔧</div>
-        <div class="modal-title">Payments Currently Unavailable</div>
-        <div class="modal-text">
+        <div class="modal-title" data-i18n="shop.modalTitle">Payments Currently Unavailable</div>
+        <div class="modal-text" data-i18n-html="shop.modalBody">
             We are currently unable to accept payments as our <strong>iyzico</strong> membership process is still in progress.<br><br>
             To complete your order, please contact us or use <strong>bank transfer</strong>.<br><br>
             📧 <strong>info@inovaktif.com</strong><br>
             📞 <strong>+90 212 258 80 34</strong>
         </div>
-        <button class="modal-close" onclick="closeModal()">OK, Got It</button>
+        <button class="modal-close" onclick="closeModal()" data-i18n="shop.modalOk">OK, Got It</button>
     </div>
 </div>
 
@@ -322,6 +324,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var kdv = Math.round(total * 0.18);
     var genel = total + kdv;
 
+    var tx = function (k) { return window.InoI18n ? InoI18n.t(k) : k; };
     document.getElementById('orderItems').innerHTML = items.map(function(item){
         return '<div class="order-item">'+
             '<img src="'+item.image+'" alt="'+item.name+'"/>'+
@@ -334,9 +337,25 @@ document.addEventListener('DOMContentLoaded', function(){
     }).join('');
 
     document.getElementById('orderTotals').innerHTML =
-        '<div class="row-line">Subtotal <span>'+InoCart.formatPrice(total)+'</span></div>'+
-        '<div class="row-line">VAT (18%) <span>'+InoCart.formatPrice(kdv)+'</span></div>'+
-        '<div class="row-total">Grand Total <span>'+InoCart.formatPrice(genel)+'</span></div>';
+        '<div class="row-line">'+tx('shop.subtotal')+' <span>'+InoCart.formatPrice(total)+'</span></div>'+
+        '<div class="row-line">'+tx('shop.vatLine')+' <span>'+InoCart.formatPrice(kdv)+'</span></div>'+
+        '<div class="row-total">'+tx('shop.grand')+' <span>'+InoCart.formatPrice(genel)+'</span></div>';
+});
+document.addEventListener('ino-lang', function () {
+    if (!document.getElementById('orderItems')) return;
+    var items = InoCart.getCartItems();
+    if (!items.length) return;
+    var total = InoCart.getCartTotal();
+    var kdv = Math.round(total * 0.18);
+    var genel = total + kdv;
+    var tx = function (k) { return window.InoI18n ? InoI18n.t(k) : k; };
+    document.getElementById('orderItems').innerHTML = items.map(function(item){
+        return '<div class="order-item"><img src="'+item.image+'" alt="'+item.name+'"/><div class="order-item-info"><div class="order-item-name">'+item.name+'</div><div class="order-item-cat">'+item.category+' × '+item.qty+'</div></div><div class="order-item-price">'+InoCart.formatPrice(item.total)+'</div></div>';
+    }).join('');
+    document.getElementById('orderTotals').innerHTML =
+        '<div class="row-line">'+tx('shop.subtotal')+' <span>'+InoCart.formatPrice(total)+'</span></div>'+
+        '<div class="row-line">'+tx('shop.vatLine')+' <span>'+InoCart.formatPrice(kdv)+'</span></div>'+
+        '<div class="row-total">'+tx('shop.grand')+' <span>'+InoCart.formatPrice(genel)+'</span></div>';
 });
 
 function selectTab(btn, tab) {
@@ -363,8 +382,9 @@ function doPayment() {
     var chkK = document.getElementById('chkKvkk').checked;
     var name = document.getElementById('fName').value.trim();
     var email = document.getElementById('fEmail').value.trim();
-    if(!name || !email) { alert('Please fill in your first name and email.'); return; }
-    if(!chkM || !chkI || !chkK) { alert('Lütfen tüm sözleşmeleri okuyup onaylayın.'); return; }
+    var tx = function (k) { return window.InoI18n ? InoI18n.t(k) : k; };
+    if(!name || !email) { alert(tx('shop.needName')); return; }
+    if(!chkM || !chkI || !chkK) { alert(tx('shop.needChecks')); return; }
     document.getElementById('payModal').classList.add('open');
 }
 
@@ -376,5 +396,6 @@ document.getElementById('payModal').addEventListener('click', function(e){
     if(e.target === this) closeModal();
 });
 </script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>

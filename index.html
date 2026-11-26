@@ -5,6 +5,7 @@
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
+    <script>try{var l=localStorage.getItem("ino_lang");if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.lang=l;}catch(e){}</script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta name="description"
@@ -178,6 +179,7 @@
 
     </script>
 </head>
+<body class="home page-template-templateshome-template-php ef-home-default ef-one-slide">
 
 
 <div id="ef-loading-overlay"></div>
@@ -254,7 +256,7 @@
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219">
                                         <a href="contact.html">Contact</a></li>
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                                        <a href="cart.html">Cart <span class="cart-badge" style="display:none;background:#e74c3c;color:#fff;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">0</span></a></li>
+                                        <a href="cart.html">Cart <span class="cart-badge">0</span></a></li>
                                 </ul>
                             </section><!-- .top-bar-section -->
                         </nav><!-- .top-bar -->
@@ -273,7 +275,7 @@
                                             mobility and applications to connect with customers and prospects. What
                                             brought us together was a fundamental belief that technology, while maturing
                                             nicely for individual use, is in its infancy for corporate use and brand
-                                            building. We make strategic prodcut planning, guided by our unique ability
+                                            building. We make strategic product planning, guided by our unique ability
                                             to think beyond what people are looking for and innovating to meet those
                                             standards. Our platforms and in-house creative, planning, design and
                                             development teams combine to provide worthwhile advantages wanting to
@@ -307,8 +309,6 @@
                         <li><a title="Linkedin" class="icon-ef-linkedin"
                                href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://inovaktif.com/"
                                target="_blank"></a></li>
-                        <li><a title="Google +" class="icon-ef-gplus"
-                               href="https://plus.google.com/share?url=https://inovaktif.com/" target="_blank"></a></li>
                         <li><a title="Email" class="icon-ef-mail"
                                href="mailto:?Subject=Inovaktif&amp;Body=https://inovaktif.com/"></a></li>
                     </ul>
@@ -325,11 +325,11 @@
         <div id="ef-header-inner" class="text-center">
             <div id="ef-welcome-block">
 
-                <h1 id="ef-main-title">Inovaktif</h1>
+                <h1 id="ef-main-title" data-i18n="home.title">Inovaktif</h1>
 
                 <div class="clear"></div>
 
-                <div id="ef-main-description">
+                <div id="ef-main-description" data-i18n-html="home.tagline">
                     Where<em> Active</em> &amp; <em>Innovation</em> come together in harmony
                 </div>
 
@@ -360,8 +360,8 @@
                 <li class="ef-slide ef-dark-slide" data-url="https://inovaktif.com/investments/"><img
                         class='ef-adjust-position' src='assets/images/istanbul3-1.jpg'
                         data-src='https://inovaktif.com/assets/images/istanbul3-1-1000x651.jpg' alt=''/>
-                    <figure class="html-desc"><h2><a href="investments.html">Creative Digital Solutions</a></h2>
-                        <p>Custom designed products to fit market needs of the evolving world</p></figure>
+                    <figure class="html-desc"><h2><a href="investments.html" data-i18n="home.slideTitle">Creative Digital Solutions</a></h2>
+                        <p data-i18n="home.slideText">Custom designed products to fit market needs of the evolving world</p></figure>
                     <!-- .html-desc --></li><!-- .ef-slide --></ul>
         </div>
     </section><!-- #fireform-slider-wrapper -->
@@ -419,6 +419,7 @@
 </script>
 <script type="text/javascript" src="assets/js/app.js" id="ef-app-js"></script>
 <script type="text/javascript" src="assets/js/cart.js"></script>
+<script src="assets/js/i18n.js"></script>
 </body>
 
 

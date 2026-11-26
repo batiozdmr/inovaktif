@@ -55,10 +55,30 @@ var InoCart = (function () {
         updateCartBadge();
     }
 
+    var TR = {
+        1: { name: 'Pro Boks Eldiveni 12 oz', category: 'Eldiven', badge: 'Popüler', description: 'Güçlendirilmiş başparmak kilidi ve çok katmanlı sünger dolgulu premium sentetik deri boks eldiveni. Çuval, lapa ve sparring için uygundur.', features: ['12 oz müsabaka ağırlığı', 'Nefes alan file avuç içi', 'Cırt cırtlı bilek bandı', 'Çok katmanlı darbe emilimi', 'Unisex kalıp — S-XL'] },
+        2: { name: 'Ağır Boks Torbası 120 cm', category: 'Çuvallar', badge: 'Çok Satan', description: 'Gerçekçi vuruş hissi için tekstil dolgulu profesyonel asılı ağır torba. Ağır hizmet zinciri ve döner askı ile birlikte gelir.', features: ['120 cm × 40 cm çap', 'Dayanıklı PU dış yüzey', 'Güçlendirilmiş üst askı', 'Zincir ve döner askı dahil', 'Ev veya salon kullanımı'] },
+        3: { name: 'Boks Çorabı — 3’lü Paket', category: 'Giyim', badge: 'Yeni', description: 'Ark desteği ve nem uzaklaştıran kumaşlı yüksek konç boks çorabı. Yoğun antrenmanda botun içinde kaymadan durur.', features: ['Pakette 3 çift', 'Güçlendirilmiş topuk ve burun', 'Kaymaz manşet', 'Nefes alan pamuk karışımı', 'Çoğu bedene uyar'] },
+        4: { name: 'Elastik El Bandı 4,5 m', category: 'Koruma', badge: 'Temel', description: 'Başparmak halkalı ve cırt kapamalı profesyonel el bandı. Eldiven öncesi eklem, bilek ve başparmağı korur.', features: ['4,5 m — yetişkin boy', 'Elastik pamuk karışımı', 'Yıkanabilir ve tekrar kullanılır', 'Çift olarak satılır', 'Birden fazla renk'] },
+        5: { name: 'Açık Yüz Kafa Koruyucu', category: 'Koruma', badge: 'Pro', description: 'Maksimum görüş için açık yüz tasarımlı hafif kafa koruyucu. Yüksek yoğunluklu sünger sparring darbesini emer.', features: ['Açık yüz müsabaka kesimi', 'Ayarlanabilir arka kayış', 'CE belgeli dolgu', 'Nefes alan iç astar', 'Bedenler S / M / L'] },
+        6: { name: 'Çift Uçlu Hız Topu', category: 'Antrenman', badge: 'Antrenman', description: 'Ayarlanabilir tavan ve zemin lastikli deri hız topu. El hızı, zamanlama, ritim ve savunma refleksini geliştirir.', features: ['Hakiki deri vuruş yüzeyi', 'Ayarlanabilir elastik ipler', 'Tavan ve zemin bağlantısı dahil', 'Pompa ve iğne kutuda', 'Ev salonu için uygun'] },
+        7: { name: 'Boks Ayakkabısı — Kısa Konç', category: 'Giyim', badge: 'Premium', description: 'İz bırakmayan kauçuk tabanlı ve bilek destekli hafif boks ayakkabısı. Ringde hızlı ayak çalışması için üretilmiştir.', features: ['Süet ve sentetik saya', 'Kaymaz pivot taban', 'Bağcık ve kanca kayış', 'Hafif ring ayakkabısı', 'EU 39–45'] },
+        8: { name: 'Kasık Koruyucu ve Kupa', category: 'Koruma', badge: 'Güvenlik', description: 'Sert kupa ve elastik bel bantlı ayarlanabilir kasık koruyucu. Sparring ve müsabaka için temel güvenlik ekipmanıdır.', features: ['Sert polikarbonat kupa', 'Elastik bel kayışı', 'Nefes alan file panel', 'Unisex ayarlanabilir kalıp', 'Yıkanabilir dış kılıf'] },
+        9: { name: 'Hız İpi — Çelik Halat', category: 'Antrenman', badge: 'Kardiyo', description: 'Rulmanlı, çelik halatlı ve sünger tutamaklı hız ipi. Isınma, ayak drilleri ve boks öncesi kondisyon için uygundur.', features: ['PVC kaplı çelik halat', 'Rulmanlı tutamak', 'Ayarlanabilir boy', 'Hafif ve hızlı', 'Yedek halat dahil'] },
+        10: { name: 'Başlangıç Boks Seti', category: 'Setler', badge: 'Komple', description: 'Evde antrenmana başlamak için gerekenler: 12 oz eldiven, el bandı, ip ve montaj aparatlı 120 cm boks torbası.', features: ['12 oz boks eldiveni', 'El bandı ve ip', 'Zincirli 120 cm ağır torba', 'Montaj aparatı dahil', 'Ayrı almaya göre %15 avantaj'] }
+    };
+
+    function localize(p) {
+        if (!p) return null;
+        var tr = window.InoI18n && InoI18n.lang() === 'tr' && TR[p.id];
+        return tr ? Object.assign({}, p, TR[p.id]) : Object.assign({}, p);
+    }
+
     function getCartItems() {
         return getCart().map(function (ci) {
             var p = products.find(function (p) { return p.id === ci.id; });
-            return p ? Object.assign({}, p, { qty: ci.qty, total: p.price * ci.qty }) : null;
+            if (!p) return null;
+            return Object.assign({}, localize(p), { qty: ci.qty, total: p.price * ci.qty });
         }).filter(Boolean);
     }
 
@@ -81,7 +101,7 @@ var InoCart = (function () {
         var badges = document.querySelectorAll('.cart-badge');
         badges.forEach(function (b) {
             b.textContent = count;
-            b.style.display = count > 0 ? 'inline-block' : 'none';
+            b.style.display = count > 0 ? 'inline-flex' : 'none';
         });
     }
 
@@ -90,7 +110,7 @@ var InoCart = (function () {
         if (!toast) {
             toast = document.createElement('div');
             toast.id = 'cart-toast';
-            toast.innerHTML = '&#10003; Added to cart';
+            toast.innerHTML = '&#10003; ' + (window.InoI18n ? InoI18n.t('shop.added') : 'Added to cart');
             toast.style.cssText = 'position:fixed;bottom:30px;right:30px;background:#333;color:#fff;padding:12px 20px;border-radius:4px;z-index:9999;font-family:Montserrat,sans-serif;font-size:14px;opacity:0;transition:opacity .3s';
             document.body.appendChild(toast);
         }
@@ -100,10 +120,11 @@ var InoCart = (function () {
     }
 
     function formatPrice(n) {
-        return n.toLocaleString('en-US', { style: 'currency', currency: 'TRY', minimumFractionDigits: 0 });
+        var locale = (window.InoI18n && InoI18n.lang() === 'tr') ? 'tr-TR' : 'en-US';
+        return n.toLocaleString(locale, { style: 'currency', currency: 'TRY', minimumFractionDigits: 0 });
     }
 
     document.addEventListener('DOMContentLoaded', function () { updateCartBadge(); });
 
-    return { addItem: addItem, removeItem: removeItem, updateQty: updateQty, clearCart: clearCart, getCartItems: getCartItems, getCartTotal: getCartTotal, getCartCount: getCartCount, getProductById: getProductById, getAllProducts: getAllProducts, formatPrice: formatPrice, updateCartBadge: updateCartBadge, getProductFeatures: function (id) { var p = getProductById(id); return p && p.features ? p.features : []; } };
+    return { addItem: addItem, removeItem: removeItem, updateQty: updateQty, clearCart: clearCart, getCartItems: getCartItems, getCartTotal: getCartTotal, getCartCount: getCartCount, getProductById: getProductById, getAllProducts: getAllProducts, localize: localize, formatPrice: formatPrice, updateCartBadge: updateCartBadge, getProductFeatures: function (id) { var p = localize(getProductById(id)); return p && p.features ? p.features : []; } };
 })();

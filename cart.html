@@ -2,6 +2,7 @@
 <html lang="en" class="no-js ino-shop">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 <head>
+    <script>try{var l=localStorage.getItem("ino_lang");if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.lang=l;}catch(e){}</script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>My Cart | Inovaktif Technologies</title>
@@ -62,6 +63,7 @@
         .payment-logos { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
     </style>
 </head>
+<body>
 <div id="ef-loading-overlay"></div>
 <div id="ef-tpl-wrapper">
     <header id="ef-header" class="ef-positioner">
@@ -109,7 +111,7 @@
         <div id="ef-loader"><div class="ef-loader-1"></div><div class="ef-loader-2"></div></div>
         <div id="ef-header-inner" class="text-center">
             <div id="ef-welcome-block">
-                <h1 id="ef-main-title">My Cart</h1>
+                <h1 id="ef-main-title" data-i18n="cart.title">My Cart</h1>
                 <div class="clear"></div>
                 <div id="ef-main-description">Review your selected services and complete your order</div>
             </div>
@@ -156,9 +158,11 @@ function renderCart() {
     var items = InoCart.getCartItems();
     var cont = document.getElementById('cartContent');
     if (items.length === 0) {
-        cont.innerHTML = '<div class="cart-empty"><div style="font-size:3em;margin-bottom:16px;">🛒</div><h3 style="font-family:Montserrat,sans-serif;margin-bottom:12px;">Your cart is empty</h3><p>You haven\'t added any products yet.</p><a href="products.html">Start Shopping</a></div>';
+        var tx = function (k) { return window.InoI18n ? InoI18n.t(k) : k; };
+        cont.innerHTML = '<div class="cart-empty"><div style="font-size:3em;margin-bottom:16px;">🛒</div><h3 style="font-family:Montserrat,sans-serif;margin-bottom:12px;">'+tx('shop.emptyTitle')+'</h3><p>'+tx('shop.emptyText')+'</p><a href="products.html">'+tx('shop.start')+'</a></div>';
         return;
     }
+    var tx = function (k) { return window.InoI18n ? InoI18n.t(k) : k; };
     var total = InoCart.getCartTotal();
     var kdv = Math.round(total * 0.18);
     var genel = total + kdv;
@@ -173,27 +177,27 @@ function renderCart() {
             '</div></td>'+
             '<td class="item-price">'+InoCart.formatPrice(item.price)+'</td>'+
             '<td class="item-price">'+InoCart.formatPrice(item.total)+'</td>'+
-            '<td><button class="remove-btn" onclick="removeItem('+item.id+')" title="Remove">✕</button></td>'+
+            '<td><button class="remove-btn" onclick="removeItem('+item.id+')" title="'+tx('shop.remove')+'">✕</button></td>'+
             '</tr>';
     }).join('');
 
     cont.innerHTML = '<div class="cart-layout">'+
         '<div>'+
-        '<div class="cart-title">Cart ('+ items.length +' items)</div>'+
+        '<div class="cart-title">'+tx('shop.cartCount').replace('{n}', items.length)+'</div>'+
         '<table class="cart-table">'+
-        '<thead><tr><th></th><th>Product</th><th>Qty</th><th>Unit Price</th><th>Total</th><th></th></tr></thead>'+
+        '<thead><tr><th></th><th>'+tx('shop.product')+'</th><th>'+tx('shop.qty')+'</th><th>'+tx('shop.unit')+'</th><th>'+tx('shop.total')+'</th><th></th></tr></thead>'+
         '<tbody>'+rows+'</tbody>'+
         '</table>'+
-        '<div style="margin-top:20px;"><a href="products.html" style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;color:#333;">← Continue Shopping</a></div>'+
+        '<div style="margin-top:20px;"><a href="products.html" style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;color:#333;">← '+tx('shop.continue')+'</a></div>'+
         '</div>'+
         '<div class="cart-summary">'+
-        '<div class="summary-title">Order Summary</div>'+
-        '<div class="summary-row">Subtotal <span>'+InoCart.formatPrice(total)+'</span></div>'+
-        '<div class="summary-row">VAT (18%) <span>'+InoCart.formatPrice(kdv)+'</span></div>'+
-        '<div class="summary-row total">Grand Total <span>'+InoCart.formatPrice(genel)+'</span></div>'+
-        '<a href="checkout.html" class="btn-checkout">Proceed to Checkout →</a>'+
-        '<a href="products.html" class="btn-continue">Continue Shopping</a>'+
-        '<div class="secure-note">🔒 Secure checkout with 256-bit SSL</div>'+
+        '<div class="summary-title">'+tx('shop.summary')+'</div>'+
+        '<div class="summary-row">'+tx('shop.subtotal')+' <span>'+InoCart.formatPrice(total)+'</span></div>'+
+        '<div class="summary-row">'+tx('shop.vatLine')+' <span>'+InoCart.formatPrice(kdv)+'</span></div>'+
+        '<div class="summary-row total">'+tx('shop.grand')+' <span>'+InoCart.formatPrice(genel)+'</span></div>'+
+        '<a href="checkout.html" class="btn-checkout">'+tx('shop.checkout')+' →</a>'+
+        '<a href="products.html" class="btn-continue">'+tx('shop.continue')+'</a>'+
+        '<div class="secure-note">🔒 '+tx('shop.ssl')+'</div>'+
         '<div class="payment-logos" data-ino-payment-banner></div>'+
         '</div>'+
         '</div>';
@@ -218,6 +222,8 @@ function initCartPage() {
 }
 
 document.addEventListener('DOMContentLoaded', initCartPage);
+document.addEventListener('ino-lang', initCartPage);
 </script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>

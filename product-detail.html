@@ -2,6 +2,7 @@
 <html lang="en" class="no-js ino-shop">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 <head>
+    <script>try{var l=localStorage.getItem("ino_lang");if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.lang=l;}catch(e){}</script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>Product Details | Inovaktif Technologies</title>
@@ -69,6 +70,7 @@
         .cart-float:hover { background: #444; color: #fff; text-decoration: none; }
     </style>
 </head>
+<body>
 <div id="ef-loading-overlay"></div>
 <div id="ef-tpl-wrapper">
     <header id="ef-header" class="ef-positioner">
@@ -116,9 +118,9 @@
         <div id="ef-loader"><div class="ef-loader-1"></div><div class="ef-loader-2"></div></div>
         <div id="ef-header-inner" class="text-center">
             <div id="ef-welcome-block">
-                <h1 id="ef-main-title" id="pageTitle">Product Details</h1>
+                <h1 id="ef-main-title">Product Details</h1>
                 <div class="clear"></div>
-                <div id="ef-main-description">Service details and pricing</div>
+                <div id="ef-main-description" data-i18n="detail.lead">Service details and pricing</div>
             </div>
         </div>
         <div id="ef-header-angle" class="clearfix"><span class="ef-header-angle"></span><a id="ef-to-content" href="#"></a></div>
@@ -129,7 +131,7 @@
             <div class="detail-section">
                 <div class="detail-container">
                     <div class="breadcrumb-bar">
-                        <a href="index.html">Home</a> &rsaquo; <a href="products.html">Products</a> &rsaquo; <span id="bcName">Product</span>
+                        <a href="index.html" data-i18n="detail.home">Home</a> &rsaquo; <a href="products.html" data-i18n="nav.products">Products</a> &rsaquo; <span id="bcName">Product</span>
                     </div>
                     <div class="detail-grid">
                         <div class="detail-image">
@@ -140,23 +142,23 @@
                             <div class="detail-badge" id="detailBadge"></div>
                             <h1 class="detail-name" id="detailName"></h1>
                             <div class="detail-price" id="detailPrice"></div>
-                            <div class="detail-price-note">Prices exclude VAT. Free shipping on orders over ₺2,000.</div>
+                            <div class="detail-price-note" data-i18n="detail.priceNote">Prices exclude VAT. Free shipping on orders over ₺2,000.</div>
                             <p class="detail-desc" id="detailDesc"></p>
                             <ul class="detail-features" id="detailFeatures"></ul>
                             <div class="qty-control">
-                                <label>Qty:</label>
+                                <label data-i18n="shop.qty">Qty</label>
                                 <div class="qty-input">
                                     <button class="qty-btn" onclick="changeQty(-1)">−</button>
                                     <span class="qty-num" id="qtyNum">1</span>
                                     <button class="qty-btn" onclick="changeQty(1)">+</button>
                                 </div>
                             </div>
-                            <button class="btn-add-main" onclick="doAddToCart()">Add to Cart</button>
-                            <a href="cart.html" class="btn-go-cart">Go to Cart</a>
+                            <button class="btn-add-main" onclick="doAddToCart()" data-i18n="shop.add">Add to Cart</button>
+                            <a href="cart.html" class="btn-go-cart" data-i18n="detail.goCart">Go to Cart</a>
                             <div class="trust-badges">
-                                <div class="trust-item">🔒 256-bit SSL Secure Shopping</div>
-                                <div class="trust-item">📞 24/7 Support</div>
-                                <div class="trust-item">✅ Satisfaction Guarantee</div>
+                                <div class="trust-item" data-i18n="detail.ssl">256-bit SSL secure checkout</div>
+                                <div class="trust-item" data-i18n="detail.support">Support on business days</div>
+                                <div class="trust-item" data-i18n="detail.guarantee">14-day withdrawal right</div>
                             </div>
                             <div style="margin-top:16px;" data-ino-payment-banner></div>
                         </div>
@@ -166,7 +168,7 @@
 
             <div class="related-section">
                 <div class="detail-container">
-                    <h2>Related Products</h2>
+                    <h2 data-i18n="shop.related">Related Products</h2>
                     <div class="related-grid" id="relatedGrid"></div>
                 </div>
             </div>
@@ -207,40 +209,53 @@
 var currentProduct = null;
 var qty = 1;
 
-document.addEventListener('DOMContentLoaded', function(){
-    var params = new URLSearchParams(window.location.search);
-    var id = parseInt(params.get('id'));
-    if(!id){ window.location.href='products.html'; return; }
-    currentProduct = InoCart.getProductById(id);
-    if(!currentProduct){ window.location.href='products.html'; return; }
-
-    document.getElementById('pageTitle') && (document.getElementById('ef-main-title').textContent = currentProduct.name);
-    document.getElementById('bcName').textContent = currentProduct.name;
+function fillDetail() {
+    if (!currentProduct) return;
+    var id = currentProduct.id;
+    var view = InoCart.localize(currentProduct);
+    var titleEl = document.getElementById('ef-main-title');
+    if (titleEl) titleEl.textContent = view.name;
+    var bcName = document.getElementById('bcName');
+    if (bcName) bcName.textContent = view.name;
     document.getElementById('detailImg').src = currentProduct.image;
-    document.getElementById('detailImg').alt = currentProduct.name;
-    document.getElementById('detailCat').textContent = currentProduct.category;
-    document.getElementById('detailBadge').textContent = currentProduct.badge;
-    document.getElementById('detailName').textContent = currentProduct.name;
+    document.getElementById('detailImg').alt = view.name;
+    document.getElementById('detailCat').textContent = view.category;
+    document.getElementById('detailBadge').textContent = view.badge;
+    document.getElementById('detailName').textContent = view.name;
     document.getElementById('detailPrice').textContent = InoCart.formatPrice(currentProduct.price);
-    document.getElementById('detailDesc').textContent = currentProduct.description;
+    document.getElementById('detailDesc').textContent = view.description;
 
     var feats = InoCart.getProductFeatures(id);
     document.getElementById('detailFeatures').innerHTML = feats.map(function(f){ return '<li>'+f+'</li>'; }).join('');
 
     var all = InoCart.getAllProducts();
     var related = all.filter(function(p){ return p.id !== id; }).slice(0,4);
+    var tx = function (k) { return window.InoI18n ? InoI18n.t(k) : 'View'; };
     document.getElementById('relatedGrid').innerHTML = related.map(function(p){
+        var item = InoCart.localize(p);
         return '<div class="related-card">'+
-            '<img src="'+p.image+'" alt="'+p.name+'"/>'+
+            '<img src="'+p.image+'" alt="'+item.name+'"/>'+
             '<div class="related-body">'+
-            '<h4>'+p.name+'</h4>'+
+            '<h4>'+item.name+'</h4>'+
             '<div class="price">'+InoCart.formatPrice(p.price)+'</div>'+
-            '<a href="product-detail.html?id='+p.id+'">View →</a>'+
+            '<a href="product-detail.html?id='+p.id+'">'+tx('shop.view')+' →</a>'+
             '</div></div>';
     }).join('');
 
     updateCartFloat();
+    var addBtn = document.querySelector('.btn-add-main');
+    if (addBtn && window.InoI18n) addBtn.textContent = InoI18n.t('shop.add');
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    var params = new URLSearchParams(window.location.search);
+    var id = parseInt(params.get('id'));
+    if(!id){ window.location.href='products.html'; return; }
+    currentProduct = InoCart.getProductById(id);
+    if(!currentProduct){ window.location.href='products.html'; return; }
+    fillDetail();
 });
+document.addEventListener('ino-lang', fillDetail);
 
 function changeQty(d){
     qty = Math.max(1, qty + d);
@@ -257,5 +272,6 @@ function updateCartFloat(){
     if(fl) fl.style.display = count > 0 ? 'flex' : 'none';
 }
 </script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>

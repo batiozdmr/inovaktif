@@ -589,8 +589,9 @@
                 });
             }
 
-            if (ef_html_caption[activeind]) {
-                ef_desc_obj.html(ef_html_caption[activeind]);
+            var liveCaption = ef_js_options.main_slideshow.find('.ef-slide').eq(activeind).find('.html-desc').html();
+            if (liveCaption || ef_html_caption[activeind]) {
+                ef_desc_obj.html(liveCaption || ef_html_caption[activeind]);
                 if (ef_cap_added) {
                     ef_desc_obj.removeClass('ef-animate-caption');
                 }
