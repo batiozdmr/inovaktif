@@ -612,7 +612,6 @@ var InoI18n = (function () {
         document.documentElement.lang = lang();
         ensureSwitcher();
         ensurePrivacyLink();
-        ensureShopLinks();
         ensureFooter();
         markActive();
         applyKeyed();
@@ -620,7 +619,6 @@ var InoI18n = (function () {
         applyNav();
         applyPhrases();
         refreshSlideCaption();
-        refreshCartBadge();
         document.dispatchEvent(new CustomEvent('ino-lang'));
     }
 
